@@ -1,6 +1,6 @@
-# SEG 3125 - Analysis and Design of User Interfaces
+# Lab 1: SEG 3125
 
-Lab Submissions
+Introduction to HTML and CSS
 
 ## Authors
 

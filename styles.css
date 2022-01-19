@@ -10,10 +10,6 @@ body {
   row-gap: 10px;
 }
 
-.introText {
-  text-align: center;
-}
-
 .card {
   width: 45vw;
   background-color: #c4dbb6;

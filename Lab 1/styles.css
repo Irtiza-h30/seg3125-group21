@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url("gradient_background.jpg")
+}
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.introText {
+    text-align: center;
+}
+
+.card {
+    width: 45vw;
+    background-color: #c4dbb6;
+    border: 1px solid #83917a;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+}
+
+input[type=submit] {
+    width: 200px;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(15, 89, 63);
+    color: white;
+    cursor: pointer;
+}
+
+a {
+    color: rgb(15, 89, 63);
+}
+img {
+    width: 520px;
+    height: 500px;
+    border: 1px solid black;
+}

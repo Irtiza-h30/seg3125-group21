@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="author"
+      content="co-authored by Irtiza Hasan, Kareem Dabbour, Andrea Herscovich, and Justin Lim"
+    />
+    <meta name="description" content="Lab 1 - Introduction to HTML/CSS" />
+    <meta name="keywords" content="This lab is an introduction to HTML/CSS" />
+    <title>SEG3125 Lab 1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Survey</h1>
+
+    <div>
+      <p>
+        What do you think of
+        <a href="https://www.shopify.ca/" rel="noopener noreferrer">
+          Shopify's</a
+        >
+        website?
+      </p>
+      <img
+        src="shopify.png"
+        alt="Shopify Homepage"
+        width="700px"
+        height="400px"
+      />
+    </div>
+
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" placeholder="Enter name..." autofocus />
+
+    <div>
+      <p>What are your favorite aspects about Shopify's site?</p>
+      <input
+        type="checkbox"
+        id="easeOfUse"
+        name="favouriteAspects"
+        value="easeOfUse"
+      />
+      <label for="easeOfUse">Ease of Use</label><br />
+      <input
+        type="checkbox"
+        id="interfaceDesign"
+        name="favouriteAspects"
+        value="interfaceDesign"
+      />
+      <label for="interfaceDesign">Interface Design</label><br />
+      <input
+        type="checkbox"
+        id="featuresProvided"
+        name="favouriteAspects"
+        value="featuresProvided "
+      />
+      <label for="featuresProvided ">Features Provided</label><br />
+      <input
+        type="checkbox"
+        id="reliable"
+        name="favouriteAspects"
+        value="reliable "
+      />
+      <label for="reliable ">Reliable</label><br />
+    </div>
+
+    <div>
+      <p>How would you rate the usability of this website ?</p>
+      <input type="radio" id="excellent" name="usability" value="excellent" />
+      <label for="excellent">Excellent</label><br />
+      <input type="radio" id="good" name="usability" value="good" />
+      <label for="good">Good</label><br />
+      <input type="radio" id="average" name="usability" value="average" />
+      <label for="average">Average</label><br />
+      <input type="radio" id="poor" name="usability" value="poor" />
+      <label for="poor">Poor</label><br />
+      <br />
+    </div>
+
+    <div>
+      <label for="cars">Expertise on Ecommerce:</label>
+      <select name="expertise" id="expertise">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </div>
+
+    <div>
+      How likely are you to recommend Shopify to your friends and family?
+      <p>
+        Not very likely
+        <input type="range" name="recommend" min="1" max="10" value="5" />
+        Very likely
+      </p>
+    </div>
+
+    <div>
+      Feedback and Comments:
+      <br />
+      <textarea
+        rows="5"
+        cols="75"
+        placeholder="Enter comments..."
+        name="comment"
+      ></textarea>
+    </div>
+
+    <input type="submit" value="Submit" />
+    <footer>Website Designed by: Group 14</footer>
+  </body>
+</html>

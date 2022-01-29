@@ -1,0 +1,100 @@
+body {
+  background-color: #935d8c;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.innerContent .itemLabel {
+  display: inline-block;
+  width: 75px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.innerContent > * {
+  padding: 10px;
+}
+
+button {
+  background: #0066a2;
+  color: white;
+  border-style: outset;
+  border-color: #0066a2;
+  height: 50px;
+  width: 100px;
+  font: bold15px arial, sans-serif;
+  text-shadow: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: lightgray;
+  margin: 1em;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  border: 2px solid black;
+  background-color: #9bb2e1;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tabs > input[type="radio"] {
+  display: none;
+}
+
+.tabs > label {
+  background: #efa8b0;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  border: 1px solid black;
+  border-radius: 8px;
+  border-bottom: 0;
+}
+
+.tabs > label:hover {
+  background: #be8cbe;
+}
+
+.tabs .tabContent {
+  width: 100%;
+  padding: 2em;
+  background: #e5e5e5;
+  order: 1;
+  display: none;
+  border: 2px solid black;
+  border-radius: 8px;
+  height: 70vh;
+}
+
+.tabs > input[type="radio"]:checked + label {
+  background: #c79cc8;
+}
+
+.tabs > input[type="radio"]:checked + label + .tabContent {
+  display: block;
+}
+
+.tabs > input[type="radio"]:disabled + label {
+  cursor: not-allowed;
+  color: gray;
+}

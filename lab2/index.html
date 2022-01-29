@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="author"
+      content="co-authored by Irtiza Hasan, Kareem Dabbour, Andrea Herscovich, and Justin Lim"
+    />
+    <meta name="description" content="Lab 2 - Introduction to JavaScript" />
+    <meta name="keywords" content="This lab is an introduction to JavaScript" />
+    <title>SEG3125 Lab 2</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <script src="scripts/index.js"></script>
+
+    <header class="title">
+      <h1>Pantry Pal</h1>
+    </header>
+
+    <div class="tabs">
+      <input type="radio" id="customer" name="tabs" checked="checked" />
+      <label for="customer">Customer</label>
+
+      <input type="radio" id="products" name="tabs" disabled />
+      <label for="products">Products</label>
+
+      <div class="tabContent">
+        <h1>Your Targeted Products</h1>
+        <hr />
+        <h2>Based on your restrictions we think you'll like...</h2>
+        <h3>
+          Select an item, and add it to your cart to continue to checkout:
+        </h3>
+        <div id="productList" class="innerContent"></div>
+        <button type="button" onclick="onAddToCart()">Add to Cart</button>
+      </div>
+
+      <input type="radio" id="cart" name="tabs" disabled />
+      <label for="cart">Cart</label>
+    </div>
+    <footer class="title">Website Designed by: Group 14</footer>
+  </body>
+</html>

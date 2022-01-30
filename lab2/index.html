@@ -21,7 +21,56 @@
     <div class="tabs">
       <input type="radio" id="customer" name="tabs" checked="checked" />
       <label for="customer">Customer</label>
+      <div class="tabContent">
+        <h1>Customer Information</h1>
+        <hr />
+        <h2>Hello, welcome to Pantry Pal!</h2>
+        <h3>Please tell us a bit about yourself to begin shopping:</h3>
+        <form
+          id="customerForm"
+          name="customerForm"
+          action="#"
+          class="innerContent"
+        >
+          <div>
+            <label class="itemLabel">Diet:</label>
+            <input
+              type="checkbox"
+              id="vegetarian"
+              name="diet"
+              value="vegetarian"
+            />
+            <label for="vegetarian">Vegetarian</label>
+            <input
+              type="checkbox"
+              id="glutenFree"
+              name="diet"
+              value="glutenFree"
+            />
+            <label for="diet">Gluten-Free</label>
+          </div>
+          <div>
+            <label class="itemLabel">Preference:</label>
+            <input
+              type="radio"
+              id="organic"
+              name="organic"
+              value="organic"
+              checked
+            />
+            <label for="organic">Organic</label>
+            <input
+              type="radio"
+              id="nonOragnic"
+              name="organic"
+              value="nonOrganic"
+            />
+            <label for="nonOragnic">Non-Oragnic</label><br />
+          </div>
 
+          <button type="button" onclick="onSubmitProfile()">Submit</button>
+        </form>
+      </div>
       <input type="radio" id="products" name="tabs" disabled />
       <label for="products">Products</label>
 

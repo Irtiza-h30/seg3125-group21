@@ -167,6 +167,12 @@ const populateListProductChoices = (arr) => {
   });
 };
 
+const onSubmitProfile = () => {
+  populateListProductChoices(getPersonalizedProducts());
+  document.getElementById("products").disabled = false;
+  document.getElementById("sortBy").value = "priceAsc";
+};
+
 const getPersonalizedProducts = () => {
   const diet = [...document.querySelectorAll("input[name='diet']:checked")].map(
     (i) => i.value

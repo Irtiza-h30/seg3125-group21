@@ -192,3 +192,44 @@ const getPersonalizedProducts = () => {
     return true;
   });
 };
+
+const onAddToCart = () => {
+  const list = document.getElementById("shoppingCart");
+  list.innerHTML = "";
+
+  const organicPreference = document.querySelector(
+    'input[name="organic"]:checked'
+  ).value;
+
+  const cart = [
+    ...document.querySelectorAll("input[name='products']:checked"),
+  ].map((i) => i.value);
+
+  if (!cart.length) {
+    const msg = document.createElement("h2");
+    msg.innerHTML =
+      "Cart is empty. Please go to the 'Products' page and add groceries.";
+    list.appendChild(msg);
+  }
+
+  const ul = document.createElement("ul");
+
+  cart.forEach((i) => {
+    const li = document.createElement("li");
+    li.innerHTML = i;
+    ul.appendChild(li);
+  });
+
+  list.appendChild(ul);
+
+  const price = products[organicPreference]
+    .filter((i) => cart.includes(i.name))
+    .reduce((acc, item) => (acc += item.price), 0)
+    .toFixed(2);
+
+  const priceMsg = document.createElement("h3");
+  priceMsg.innerHTML = `Total price of groceries: $${price}`;
+  list.appendChild(priceMsg);
+
+  document.getElementById("cart").disabled = false;
+};

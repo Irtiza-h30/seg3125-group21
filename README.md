@@ -1,6 +1,7 @@
-# SEG 3125
+# SEG 3125 Labs
 
-Labs
+- [Lab1](https://irtiza-h30.github.io/seg3125-group14/lab1/)
+- [Lab2](https://irtiza-h30.github.io/seg3125-group14/lab2/)
 
 ## Authors
 

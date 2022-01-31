@@ -55,6 +55,12 @@ const products = {
       price: 6.59,
     },
     {
+      name: "Organic Avacados",
+      vegetarian: true,
+      glutenFree: true,
+      price: 8.59,
+    },
+    {
       name: "Organic Chicken",
       vegetarian: false,
       glutenFree: true,
@@ -141,6 +147,12 @@ const products = {
       glutenFree: true,
       price: 10.0,
     },
+    {
+      name: "Beef",
+      vegetarian: false,
+      glutenFree: true,
+      price: 14.0,
+    },
   ],
 };
 
@@ -171,6 +183,20 @@ const onSubmitProfile = () => {
   populateListProductChoices(getPersonalizedProducts());
   document.getElementById("products").disabled = false;
   document.getElementById("sortBy").value = "priceAsc";
+};
+
+const onSortByChange = (e) => {
+  const personalizedProducts = getPersonalizedProducts();
+
+  if (e === "priceAsc") {
+    personalizedProducts.sort((a, b) => a.price - b.price);
+  } else if (e === "priceDesc") {
+    personalizedProducts.sort((a, b) => b.price - a.price);
+  } else {
+    personalizedProducts.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  populateListProductChoices(personalizedProducts);
 };
 
 const getPersonalizedProducts = () => {

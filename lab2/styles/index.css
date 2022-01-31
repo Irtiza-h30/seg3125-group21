@@ -13,6 +13,21 @@ h6 {
   line-height: 1.5;
 }
 
+li {
+  display: inline;
+}
+
+li {
+  border-radius: 8px;
+  border: solid 1px white;
+  padding: 5px;
+  background-color: #ddddb7;
+}
+
+li:not(:first-of-type) {
+  margin-left: 8px;
+}
+
 .innerContent .itemLabel {
   display: inline-block;
   width: 75px;

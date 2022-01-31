@@ -81,6 +81,20 @@
         <h3>
           Select an item, and add it to your cart to continue to checkout:
         </h3>
+        <div>
+          <label for="sortBy">
+            <b>Sort By:</b>
+          </label>
+          <select
+            name="sortBy"
+            id="sortBy"
+            onchange="onSortByChange(this.options[this.selectedIndex].value)"
+          >
+            <option value="priceAsc" selected>Price (asc)</option>
+            <option value="priceDesc">Price (desc)</option>
+            <option value="alphabetical">Alphabetical</option>
+          </select>
+        </div>
         <div id="productList" class="innerContent"></div>
         <button type="button" onclick="onAddToCart()">Add to Cart</button>
       </div>

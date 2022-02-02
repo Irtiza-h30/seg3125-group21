@@ -1,0 +1,125 @@
+body {
+  background-color: #935d8c;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.secondaryText {
+  color: gray;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dietSelect {
+  width: 300px;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.productList > div {
+  margin-top: 10px;
+}
+
+.borderTop {
+  border-top: 1px solid black;
+}
+
+button {
+  background: #0066a2;
+  color: white;
+  border-style: outset;
+  border-color: #0066a2;
+  height: 50px;
+  font: bold15px arial, sans-serif;
+  text-shadow: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+  min-width: 100px;
+}
+
+.title {
+  color: lightgray;
+  margin: 1em;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #efa8b0;
+  border: 2px solid black;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tabs > input[type="radio"] {
+  display: none;
+}
+
+.tabs > label {
+  background: #efa8b0;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  border-bottom: 0;
+}
+
+.tabs > label:hover {
+  background: #be8cbe;
+}
+
+.tabs .tabContent {
+  width: 100%;
+  padding: 2em;
+  background: #e5e5e5;
+  order: 1;
+  display: none;
+  border-top: 1px solid black;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.tabs > input[type="radio"]:checked + label {
+  background: #c79cc8;
+}
+
+.tabs > input[type="radio"]:checked + label + .tabContent {
+  display: block;
+}
+
+.tabs > input[type="radio"]:disabled + label {
+  cursor: not-allowed;
+  color: gray;
+}
+
+.tabs > input[type="radio"]:first-of-type + label {
+  border-top-left-radius: 12px;
+}

@@ -14,101 +14,104 @@
   <body>
     <script src="scripts/index.js"></script>
 
-    <header class="title">
-      <h1>Pantry Pal</h1>
-    </header>
-
-    <div class="tabs">
-      <input type="radio" id="customer" name="tabs" checked="checked" />
-      <label for="customer">Customer</label>
-      <div class="tabContent">
-        <h1>Customer Information</h1>
-        <hr />
-        <h2>Hello, welcome to Pantry Pal!</h2>
-        <h3>Please tell us a bit about yourself to begin shopping:</h3>
-        <form
-          id="customerForm"
-          name="customerForm"
-          action="#"
-          class="innerContent"
-        >
-          <div>
-            <label class="itemLabel">Diet:</label>
-            <input
-              type="checkbox"
-              id="vegetarian"
-              name="diet"
-              value="vegetarian"
-            />
-            <label for="vegetarian">Vegetarian</label>
-            <input
-              type="checkbox"
-              id="glutenFree"
-              name="diet"
-              value="glutenFree"
-            />
-            <label for="diet">Gluten-Free</label>
-          </div>
-          <div>
-            <label class="itemLabel">Preference:</label>
-            <input
-              type="radio"
-              id="organic"
-              name="organic"
-              value="organic"
-              checked
-            />
-            <label for="organic">Organic</label>
-            <input
-              type="radio"
-              id="nonOragnic"
-              name="organic"
-              value="nonOrganic"
-            />
-            <label for="nonOragnic">Non-Oragnic</label><br />
-          </div>
-
-          <button type="button" onclick="onSubmitProfile()">Submit</button>
-        </form>
-      </div>
-      <input type="radio" id="products" name="tabs" disabled />
-      <label for="products">Products</label>
-
-      <div class="tabContent">
-        <h1>Your Targeted Products</h1>
-        <hr />
-        <h2>Based on your restrictions we think you'll like...</h2>
-        <h3>
-          Select an item, and add it to your cart to continue to checkout:
-        </h3>
-        <div>
-          <label for="sortBy">
-            <b>Sort By:</b>
-          </label>
-          <select
-            name="sortBy"
-            id="sortBy"
-            onchange="onSortByChange(this.options[this.selectedIndex].value)"
+    <div class="container">
+      <header class="title">
+        <h1>PantryPal</h1>
+      </header>
+      <div class="tabs">
+        <input type="radio" id="customer" name="tabs" checked="checked" />
+        <label for="customer">Customer</label>
+        <div class="tabContent">
+          <h1>Customer Information</h1>
+          <hr />
+          <h2>Hello, welcome to Pantry Pal!</h2>
+          <h3>Please tell us a bit about yourself to begin shopping:</h3>
+          <form
+            id="customerForm"
+            name="customerForm"
+            action="#"
+            class="innerContent"
           >
-            <option value="priceAsc" selected>Price (asc)</option>
-            <option value="priceDesc">Price (desc)</option>
-            <option value="alphabetical">Alphabetical</option>
-          </select>
+            <div>
+              <label class="itemLabel">Diet:</label>
+              <input
+                type="checkbox"
+                id="vegetarian"
+                name="diet"
+                value="vegetarian"
+              />
+              <label for="vegetarian">Vegetarian</label>
+              <input
+                type="checkbox"
+                id="glutenFree"
+                name="diet"
+                value="glutenFree"
+              />
+              <label for="diet">Gluten-Free</label>
+            </div>
+            <div>
+              <label class="itemLabel">Preference:</label>
+              <input
+                type="radio"
+                id="organic"
+                name="organic"
+                value="organic"
+                checked
+              />
+              <label for="organic">Organic</label>
+              <input
+                type="radio"
+                id="nonOragnic"
+                name="organic"
+                value="nonOrganic"
+              />
+              <label for="nonOragnic">Non-Oragnic</label><br />
+            </div>
+
+            <button type="button" onclick="onSubmitProfile()">Submit</button>
+          </form>
         </div>
-        <div id="productList" class="innerContent"></div>
-        <button type="button" onclick="onAddToCart()">Add to Cart</button>
-      </div>
+        <input type="radio" id="products" name="tabs" disabled />
+        <label for="products">Products</label>
 
-      <input type="radio" id="cart" name="tabs" disabled />
-      <label for="cart">Cart</label>
+        <div class="tabContent">
+          <h1>Your Targeted Products</h1>
+          <hr />
+          <h2>Based on your restrictions we think you'll like...</h2>
+          <h3>
+            Select an item, and add it to your cart to continue to checkout:
+          </h3>
+          <div>
+            <label for="sortBy">
+              <b>Sort By:</b>
+            </label>
+            <select
+              name="sortBy"
+              id="sortBy"
+              onchange="onSortByChange(this.options[this.selectedIndex].value)"
+            >
+              <option value="priceAsc" selected>Price (asc)</option>
+              <option value="priceDesc">Price (desc)</option>
+              <option value="alphabetical">Alphabetical</option>
+            </select>
+          </div>
+          <div id="productList" class="innerContent"></div>
+          <button type="button" onclick="onAddToCart()">
+            Add selected items to Cart
+          </button>
+        </div>
 
-      <div class="tabContent">
-        <h1>Shopping Cart</h1>
-        <hr />
-        <h2>Your cart:</h2>
-        <div id="shoppingCart" class="innerContent"></div>
+        <input type="radio" id="cart" name="tabs" disabled />
+        <label for="cart">Cart</label>
+
+        <div class="tabContent">
+          <h1>Shopping Cart</h1>
+          <hr />
+          <h2>Your cart:</h2>
+          <div id="shoppingCart" class="innerContent"></div>
+        </div>
       </div>
+      <footer class="title">Website Designed by: Group 14</footer>
     </div>
-    <footer class="title">Website Designed by: Group 14</footer>
   </body>
 </html>

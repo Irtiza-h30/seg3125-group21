@@ -55,16 +55,16 @@ const products = {
       price: 6.59,
     },
     {
-      name: "Organic Avacados",
-      vegetarian: true,
-      glutenFree: true,
-      price: 8.59,
-    },
-    {
       name: "Organic Chicken",
       vegetarian: false,
       glutenFree: true,
       price: 7.99,
+    },
+    {
+      name: "Organic Avacados",
+      vegetarian: true,
+      glutenFree: true,
+      price: 8.59,
     },
   ],
   nonOrganic: [
@@ -183,6 +183,7 @@ const onSubmitProfile = () => {
   populateListProductChoices(getPersonalizedProducts());
   document.getElementById("products").disabled = false;
   document.getElementById("sortBy").value = "priceAsc";
+  onSortByChange("priceAsc");
 };
 
 const onSortByChange = (e) => {
@@ -236,26 +237,29 @@ const onAddToCart = () => {
     msg.innerHTML =
       "Cart is empty. Please go to the 'Products' page and add groceries.";
     list.appendChild(msg);
+  } else {
+    const ul = document.createElement("ul");
+
+    cart.forEach((i) => {
+      const price = products[organicPreference].find(
+        (product) => product.name === i
+      ).price;
+      const li = document.createElement("li");
+      li.innerHTML = `<div class="product"><span>${i}</span><span>$${price}</span></div>`;
+      ul.appendChild(li);
+    });
+
+    list.appendChild(ul);
+
+    const price = products[organicPreference]
+      .filter((i) => cart.includes(i.name))
+      .reduce((acc, item) => (acc += item.price), 0)
+      .toFixed(2);
+
+    const priceMsg = document.createElement("h3");
+    priceMsg.innerHTML = `<div class="product borderTop">
+    <span>Total:</span><span>$${price}</span></div>`;
+    list.appendChild(priceMsg);
   }
-
-  const ul = document.createElement("ul");
-
-  cart.forEach((i) => {
-    const li = document.createElement("li");
-    li.innerHTML = i;
-    ul.appendChild(li);
-  });
-
-  list.appendChild(ul);
-
-  const price = products[organicPreference]
-    .filter((i) => cart.includes(i.name))
-    .reduce((acc, item) => (acc += item.price), 0)
-    .toFixed(2);
-
-  const priceMsg = document.createElement("h3");
-  priceMsg.innerHTML = `Total price of groceries: $${price}`;
-  list.appendChild(priceMsg);
-
   document.getElementById("cart").disabled = false;
 };

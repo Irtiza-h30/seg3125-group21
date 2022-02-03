@@ -266,6 +266,11 @@ const groupBy = (xs) =>
     { Fruits: [], Vegetables: [], Grains: [], "Dairy & Eggs": [], Meats: [] }
   );
 
+const onChangeProfile = () => {
+  populateListProductChoices(getPersonalizedProducts(), "category");
+  document.getElementById("sortBy").value = "category";
+};
+
 const onSortByChange = (e) => {
   const personalizedProducts = getPersonalizedProducts();
 
@@ -343,6 +348,15 @@ const onAddToCart = () => {
     <span>Total:</span><span>$${price}</span></div>`;
     list.appendChild(priceMsg);
   }
+};
+
+const onChangeSlider = () => {
+  const personalizedProducts = getPersonalizedProducts();
+  const isChecked = document.getElementById("slider").checked;
+
+  personalizedProducts.forEach((i) => {
+    document.getElementById(i.name).checked = isChecked;
+  });
 };
 
 window.onload = () => {

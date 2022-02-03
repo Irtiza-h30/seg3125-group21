@@ -10,8 +10,7 @@
     <meta name="keywords" content="This lab is an introduction to JavaScript" />
     <title>SEG3125 Lab 3</title>
     <link rel="stylesheet" href="styles/index.css" />
-    <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
-  <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+  </head>
   <body>
     <script src="scripts/index.js"></script>
 
@@ -32,7 +31,7 @@
             name="customerForm"
             action="#"
             class="innerContent"
-            onchange="onSubmitProfile()"
+            onchange="onChangeProfile()"
           >
             <p>Do you have any dietary restrictions?</p>
             <div class="formItem">
@@ -75,20 +74,35 @@
           <h3>
             Select an item, and add it to your cart to continue to checkout:
           </h3>
-          <div>
-            <label for="sortBy">
-              <b>Sort By</b>
-            </label>
-            <select
-              name="sortBy"
-              id="sortBy"
-              onchange="onSortByChange(this.options[this.selectedIndex].value)"
-            >
-              <option value="category" selected>Food Group</option>
-              <option value="priceAsc">Price (asc)</option>
-              <option value="priceDesc">Price (desc)</option>
-              <option value="alphabetical">Alphabetical</option>
-            </select>
+          <div class="productFilterContainer">
+            <span>
+              <label for="sortBy">
+                <b>Sort By</b>
+              </label>
+              <select
+                name="sortBy"
+                id="sortBy"
+                onchange="onSortByChange(this.options[this.selectedIndex].value)"
+              >
+                <option value="category" selected>Food Group</option>
+                <option value="priceAsc">Price (asc)</option>
+                <option value="priceDesc">Price (desc)</option>
+                <option value="alphabetical">Alphabetical</option>
+              </select>
+            </span>
+            <span class="switchContainer">
+              <span>
+                <b>Select all products</b>
+              </span>
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  onchange="onChangeSlider()"
+                  id="slider"
+                />
+                <span class="slider"> </span>
+              </label>
+            </span>
           </div>
           <div id="productList" class="innerContent productList"></div>
           <div class="flexEndWrapper">
@@ -111,5 +125,5 @@
       </div>
       <footer class="title">Website Designed by: Group 14</footer>
     </div>
-  <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d7e1cc4ceb78c9b',m:'pmdj6x436PIa0OniB8gZwudrj522X.drBrGBptH5Oyc-1643917031-0-AXGDyD1XvJ81V89VoMOGlo+TzkBvD+bWqWHycP5EqVOGjlv4XtrTH6bYWJ24PqV7CqpuREiEHhVqtstir3iiVkBYmvyNV/sc4He9niUeiMIw8of/AeYIxFbbfKhqe34sdl25HlRrwFbyh/kyyE0iEr8QPxg7bnOzqGrWAJw9kchJwN0L+JlYAPRxBjMEWFdbBg==',s:[0x5c3f6aec92,0xdc94061b33],}})();</script></body>
+  </body>
 </html>

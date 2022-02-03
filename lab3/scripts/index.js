@@ -218,17 +218,22 @@ const populateListProductChoices = (arr) => {
     checkbox.type = "checkbox";
     checkbox.name = "products";
     checkbox.value = i.name;
+    checkbox.id = i.name;
     const image = document.createElement("img");
     image.src = i.src;
-    image.height = 150;
-    image.width = 150;
+    image.alt = i.name;
 
     div.append(checkbox);
-    div.append(image);
 
     const label = document.createElement("label");
+    const figure = document.createElement("figure");
+    const caption = document.createElement("figcaption");
+    caption.innerHTML = `${i.name} - $${i.price}`;
+
+    figure.appendChild(image);
+    figure.appendChild(caption);
     label.htmlFor = i.name;
-    label.appendChild(document.createTextNode(`${i.name} - $${i.price}`));
+    label.appendChild(figure);
     div.appendChild(label);
     list.appendChild(div);
   });

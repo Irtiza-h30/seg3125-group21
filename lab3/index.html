@@ -10,6 +10,7 @@
     <meta name="keywords" content="This lab is an introduction to JavaScript" />
     <title>SEG3125 Lab 3</title>
     <link rel="stylesheet" href="styles/index.css" />
+    <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
   </head>
   <body>
     <script src="scripts/index.js"></script>
@@ -33,19 +34,20 @@
             class="innerContent"
             onchange="onSubmitProfile()"
           >
-            <div>
-              <p>Do you have any dietary restrictions?</p>
+            <p>Do you have any dietary restrictions?</p>
+            <div class="formItem">
               <select multiple id="diet" name="diet" class="dietSelect">
                 <option value="vegetarian">Vegetarian</option>
                 <option value="glutenFree">Gluten-Free</option>
               </select>
               <br />
               <label class="secondaryText" for="diet">
-                Select all that apply. (Use cmd to select multiple)
+                Select all that apply. (Use cmd to select multiple or to
+                deselect)
               </label>
             </div>
-            <div>
-              <p>Would you like to shop for Organic options?</p>
+            <p>Would you like to shop for organic options?</p>
+            <div class="formItem">
               <input
                 id="organic"
                 type="checkbox"
@@ -82,25 +84,34 @@
             </select>
           </div>
           <div id="productList" class="innerContent productList"></div>
-          <button type="button" onclick="onAddToCart()">
-            Add selected items to cart
-          </button>
+          <div class="flexEndWrapper">
+            <button type="button" onclick="onAddToCart()">
+              Add selected items to cart
+            </button>
+          </div>
         </div>
-
         <input type="radio" id="cart" name="tabs" />
         <label for="cart">Cart</label>
-
         <div class="tabContent">
           <h1>Your Cart</h1>
           <hr />
           <div id="shoppingCart" class="innerContent displayProduct">
             <h3>
-              Cart is empty. Please go to the 'Products' page and add groceries.
+              Cart is empty. Please go to the 'Products' page to add groceries.
             </h3>
           </div>
         </div>
       </div>
       <footer class="title">Website Designed by: Group 14</footer>
     </div>
+    <script type="text/javascript">
+      (function () {
+        window["__CF$cv$params"] = {
+          r: "6d779e0ded8d198e",
+          m: "yOICF7.nII4x_BxaJfi1uWpxNHXcH.b_hrHqnPxni4A-1643848926-0-AdSzZQ3zxi46Mghr2W2UmTa+EhOL3+cNPTPn9FH8D24lupT4/rICe7H+Tb6DEQeJTacxm6IzyypaQl3k88VE9y+4rvInq3wctf2HVhaeGcnOYAidc79+EM18NE26LU+IEX0qJonXfef2bTEXYrrGgDCr+tY6t9yUqIyeXDAyCCR+Gse5diZf7Gvmx1J1fNM0Eg==",
+          s: [0x8d5e80587d, 0xed645c9ad8],
+        };
+      })();
+    </script>
   </body>
 </html>

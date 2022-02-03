@@ -6,7 +6,7 @@ const products = {
       glutenFree: true,
       price: 2.99,
       src: "images/broccoli.png",
-      category: "vegetables",
+      category: "Vegetables",
     },
     {
       name: "Organic Bread",
@@ -14,7 +14,7 @@ const products = {
       glutenFree: false,
       price: 3.49,
       src: "images/bread.png",
-      category: "grains",
+      category: "Grains",
     },
     {
       name: "Organic Apples",
@@ -22,7 +22,7 @@ const products = {
       glutenFree: true,
       price: 4.25,
       src: "images/apple.png",
-      category: "fruits",
+      category: "Fruits",
     },
     {
       name: "Organic Bananas",
@@ -30,7 +30,7 @@ const products = {
       glutenFree: true,
       price: 4.49,
       src: "images/banana.png",
-      category: "fruits",
+      category: "Fruits",
     },
     {
       name: "Organic Lettuce",
@@ -38,7 +38,7 @@ const products = {
       glutenFree: true,
       price: 4.59,
       src: "images/lettuce.png",
-      category: "vegetables",
+      category: "Vegetables",
     },
     {
       name: "Organic Gluten-Free Bread",
@@ -46,7 +46,7 @@ const products = {
       glutenFree: true,
       price: 4.99,
       src: "images/bread.png",
-      category: "grains",
+      category: "Grains",
     },
     {
       name: "Organic Milk",
@@ -54,7 +54,7 @@ const products = {
       glutenFree: true,
       price: 5.99,
       src: "images/milk.png",
-      category: "dairy and eggs",
+      category: "Dairy & Eggs",
     },
     {
       name: "Organic Eggs",
@@ -62,7 +62,7 @@ const products = {
       glutenFree: true,
       price: 6.29,
       src: "images/eggs.png",
-      category: "dairy and eggs",
+      category: "Dairy & Eggs",
     },
     {
       name: "Organic Butter",
@@ -70,7 +70,7 @@ const products = {
       glutenFree: true,
       price: 6.59,
       src: "images/butter.png",
-      category: "dairy and eggs",
+      category: "Dairy & Eggs",
     },
     {
       name: "Organic Chicken",
@@ -78,7 +78,7 @@ const products = {
       glutenFree: true,
       price: 7.99,
       src: "images/chicken.png",
-      category: "meats",
+      category: "Meats",
     },
     {
       name: "Organic Avacados",
@@ -86,7 +86,7 @@ const products = {
       glutenFree: true,
       price: 8.59,
       src: "images/avocado.png",
-      category: "fruits",
+      category: "Fruits",
     },
   ],
   nonOrganic: [
@@ -96,7 +96,7 @@ const products = {
       glutenFree: true,
       price: 1.99,
       src: "images/broccoli.png",
-      category: "vegetables",
+      category: "Vegetables",
     },
     {
       name: "Bread",
@@ -104,7 +104,7 @@ const products = {
       glutenFree: false,
       price: 2.35,
       src: "images/bread.png",
-      category: "grains",
+      category: "Grains",
     },
     {
       name: "Gluten-Free Bread",
@@ -112,7 +112,7 @@ const products = {
       glutenFree: true,
       price: 2.69,
       src: "images/bread.png",
-      category: "grains",
+      category: "Grains",
     },
     {
       name: "Cereal",
@@ -120,7 +120,7 @@ const products = {
       glutenFree: false,
       price: 2.99,
       src: "images/cereal.png",
-      category: "grains",
+      category: "Grains",
     },
 
     {
@@ -129,7 +129,7 @@ const products = {
       glutenFree: true,
       price: 3.29,
       src: "images/eggs.png",
-      category: "dairy and eggs",
+      category: "Dairy & Eggs",
     },
     {
       name: "Bananas",
@@ -137,7 +137,7 @@ const products = {
       glutenFree: true,
       price: 3.54,
       src: "images/banana.png",
-      category: "fruits",
+      category: "Fruits",
     },
     {
       name: "Lettuce",
@@ -145,7 +145,7 @@ const products = {
       glutenFree: true,
       price: 2.99,
       src: "images/lettuce.png",
-      category: "vegetables",
+      category: "Vegetables",
     },
     {
       name: "Apples",
@@ -153,7 +153,7 @@ const products = {
       glutenFree: true,
       price: 3.99,
       src: "images/apple.png",
-      category: "fruits",
+      category: "Fruits",
     },
     {
       name: "Butter",
@@ -161,7 +161,7 @@ const products = {
       glutenFree: true,
       price: 4.39,
       src: "images/butter.png",
-      category: "dairy and eggs",
+      category: "Dairy & Eggs",
     },
     {
       name: "Pasta",
@@ -169,7 +169,7 @@ const products = {
       glutenFree: false,
       price: 3.99,
       src: "images/pasta.png",
-      category: "grains",
+      category: "Grains",
     },
     {
       name: "Milk",
@@ -177,7 +177,7 @@ const products = {
       glutenFree: true,
       price: 4.99,
       src: "images/milk.png",
-      category: "dairy and eggs",
+      category: "Dairy & Eggs",
     },
     {
       name: "Chicken",
@@ -185,7 +185,7 @@ const products = {
       glutenFree: true,
       price: 7.99,
       src: "images/chicken.png",
-      category: "meats",
+      category: "Meats",
     },
     {
       name: "Salmon",
@@ -193,7 +193,7 @@ const products = {
       glutenFree: true,
       price: 9.99,
       src: "images/salmon.png",
-      category: "meats",
+      category: "Meats",
     },
     {
       name: "Beef",
@@ -201,49 +201,70 @@ const products = {
       glutenFree: true,
       price: 13.99,
       src: "images/beef.png",
-      category: "meats",
+      category: "Meats",
     },
   ],
 };
 
-const populateListProductChoices = (arr) => {
+const createCheckbox = (product) => {
   const list = document.getElementById("productList");
+  const div = document.createElement("div");
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.name = "products";
+  checkbox.value = product.name;
+  checkbox.id = product.name;
+  const image = document.createElement("img");
+  image.src = product.src;
+  image.alt = product.name;
 
+  div.append(checkbox);
+
+  const label = document.createElement("label");
+  const figure = document.createElement("figure");
+  const caption = document.createElement("figcaption");
+  caption.innerHTML = `${product.name} - $${product.price}`;
+
+  figure.appendChild(image);
+  figure.appendChild(caption);
+  label.htmlFor = product.name;
+  label.appendChild(figure);
+  div.appendChild(label);
+  list.appendChild(div);
+};
+
+const populateListProductChoices = (arr, type) => {
+  const list = document.getElementById("productList");
   list.innerHTML = "";
+  list.style = "";
 
-  arr.forEach((i) => {
-    const div = document.createElement("div");
-
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = "products";
-    checkbox.value = i.name;
-    checkbox.id = i.name;
-    const image = document.createElement("img");
-    image.src = i.src;
-    image.alt = i.name;
-
-    div.append(checkbox);
-
-    const label = document.createElement("label");
-    const figure = document.createElement("figure");
-    const caption = document.createElement("figcaption");
-    caption.innerHTML = `${i.name} - $${i.price}`;
-
-    figure.appendChild(image);
-    figure.appendChild(caption);
-    label.htmlFor = i.name;
-    label.appendChild(figure);
-    div.appendChild(label);
-    list.appendChild(div);
-  });
+  if (type !== "category") {
+    arr.forEach((i) => {
+      createCheckbox(i);
+    });
+    list.style = "justify-content: center;";
+  } else {
+    const groupedProducts = groupBy(arr, "category");
+    Object.keys(groupedProducts).forEach((category) => {
+      const p = document.createElement("h3");
+      p.className = "categoryTitle";
+      p.innerHTML = category;
+      list.appendChild(p);
+      groupedProducts[category].forEach((i) => {
+        createCheckbox(i);
+      });
+    });
+  }
 };
 
-const onSubmitProfile = () => {
-  populateListProductChoices(getPersonalizedProducts());
-  document.getElementById("sortBy").value = "priceAsc";
-  onSortByChange("priceAsc");
-};
+const groupBy = (xs) =>
+  xs.reduce(
+    (rv, x) => {
+      rv[x.category].push(x);
+      return rv;
+    },
+    { Fruits: [], Vegetables: [], Grains: [], "Dairy & Eggs": [], Meats: [] }
+  );
 
 const onSortByChange = (e) => {
   const personalizedProducts = getPersonalizedProducts();
@@ -252,11 +273,11 @@ const onSortByChange = (e) => {
     personalizedProducts.sort((a, b) => a.price - b.price);
   } else if (e === "priceDesc") {
     personalizedProducts.sort((a, b) => b.price - a.price);
-  } else {
+  } else if (e === "alphabetical") {
     personalizedProducts.sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  populateListProductChoices(personalizedProducts);
+  populateListProductChoices(personalizedProducts, e);
 };
 
 const getPersonalizedProducts = () => {
@@ -325,5 +346,5 @@ const onAddToCart = () => {
 };
 
 window.onload = () => {
-  populateListProductChoices(getPersonalizedProducts());
+  populateListProductChoices(getPersonalizedProducts(), "category");
 };

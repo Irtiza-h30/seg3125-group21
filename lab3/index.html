@@ -11,7 +11,7 @@
     <title>SEG3125 Lab 3</title>
     <link rel="stylesheet" href="styles/index.css" />
     <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
-  </head>
+  <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
   <body>
     <script src="scripts/index.js"></script>
 
@@ -36,7 +36,13 @@
           >
             <p>Do you have any dietary restrictions?</p>
             <div class="formItem">
-              <select multiple id="diet" name="diet" class="dietSelect">
+              <select
+                multiple
+                id="diet"
+                name="diet"
+                class="dietSelect"
+                style="margin-bottom: 5px"
+              >
                 <option value="vegetarian">Vegetarian</option>
                 <option value="glutenFree">Gluten-Free</option>
               </select>
@@ -71,14 +77,15 @@
           </h3>
           <div>
             <label for="sortBy">
-              <b>Sort By:</b>
+              <b>Sort By</b>
             </label>
             <select
               name="sortBy"
               id="sortBy"
               onchange="onSortByChange(this.options[this.selectedIndex].value)"
             >
-              <option value="priceAsc" selected>Price (asc)</option>
+              <option value="category" selected>Food Group</option>
+              <option value="priceAsc">Price (asc)</option>
               <option value="priceDesc">Price (desc)</option>
               <option value="alphabetical">Alphabetical</option>
             </select>
@@ -104,14 +111,5 @@
       </div>
       <footer class="title">Website Designed by: Group 14</footer>
     </div>
-    <script type="text/javascript">
-      (function () {
-        window["__CF$cv$params"] = {
-          r: "6d779e0ded8d198e",
-          m: "yOICF7.nII4x_BxaJfi1uWpxNHXcH.b_hrHqnPxni4A-1643848926-0-AdSzZQ3zxi46Mghr2W2UmTa+EhOL3+cNPTPn9FH8D24lupT4/rICe7H+Tb6DEQeJTacxm6IzyypaQl3k88VE9y+4rvInq3wctf2HVhaeGcnOYAidc79+EM18NE26LU+IEX0qJonXfef2bTEXYrrGgDCr+tY6t9yUqIyeXDAyCCR+Gse5diZf7Gvmx1J1fNM0Eg==",
-          s: [0x8d5e80587d, 0xed645c9ad8],
-        };
-      })();
-    </script>
-  </body>
+  <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d7e1cc4ceb78c9b',m:'pmdj6x436PIa0OniB8gZwudrj522X.drBrGBptH5Oyc-1643917031-0-AXGDyD1XvJ81V89VoMOGlo+TzkBvD+bWqWHycP5EqVOGjlv4XtrTH6bYWJ24PqV7CqpuREiEHhVqtstir3iiVkBYmvyNV/sc4He9niUeiMIw8of/AeYIxFbbfKhqe34sdl25HlRrwFbyh/kyyE0iEr8QPxg7bnOzqGrWAJw9kchJwN0L+JlYAPRxBjMEWFdbBg==',s:[0x5c3f6aec92,0xdc94061b33],}})();</script></body>
 </html>

@@ -151,7 +151,7 @@ button:hover {
   cursor: pointer;
   display: inline;
 }
-
+/*Used for styling image checkboxes: https://stackoverflow.com/questions/30663562/use-images-like-checkboxes/#answer-30663705 */
 .productList label figure {
   background-color: beige;
   border-radius: 12px;

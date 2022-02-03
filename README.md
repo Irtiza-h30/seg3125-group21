@@ -2,6 +2,7 @@
 
 - [Lab1](https://irtiza-h30.github.io/seg3125-group14/lab1/)
 - [Lab2](https://irtiza-h30.github.io/seg3125-group14/lab2/)
+- [Lab3](https://irtiza-h30.github.io/seg3125-group14/lab3/)
 
 ## Authors
 

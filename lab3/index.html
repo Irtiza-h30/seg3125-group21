@@ -10,18 +10,18 @@
     <meta name="keywords" content="This lab is an introduction to JavaScript" />
     <title>SEG3125 Lab 3</title>
     <link rel="stylesheet" href="styles/index.css" />
-  </head>
+  <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
   <body>
     <script src="scripts/index.js"></script>
-
     <div class="container">
       <header class="title">
         <h1>PantryPal</h1>
       </header>
-      <div class="tabs">
-        <input type="radio" id="customer" name="tabs" checked="checked" />
-        <label for="customer">Customer</label>
-        <div class="tabContent">
+      <div class="wrapper">
+        <button class="accordion active" id="profile">
+          <h2>1.) Create a profile</h2>
+        </button>
+        <div class="panel" id="profilePanel">
           <h1>Customer Information</h1>
           <hr />
           <h2>Hello, welcome to PantryPal!</h2>
@@ -31,7 +31,6 @@
             name="customerForm"
             action="#"
             class="innerContent"
-            onchange="onChangeProfile()"
           >
             <p>Do you have any dietary restrictions?</p>
             <div class="formItem">
@@ -62,12 +61,20 @@
               <label for="organic">Yes, only show me organic options.</label>
               <br />
             </div>
+            <button
+              type="button"
+              class="submitButton"
+              onclick="onSubmitProfile()"
+            >
+              Shop
+            </button>
           </form>
         </div>
-        <input type="radio" id="products" name="tabs" />
-        <label for="products">Products</label>
 
-        <div class="tabContent">
+        <button class="accordion" id="products" disabled>
+          <h2>2.) Explore our products</h2>
+        </button>
+        <div class="panel hidden" id="productsPanel">
           <h1>Your Targeted Products</h1>
           <hr />
           <h2>Based on your restrictions we think you'll like...</h2>
@@ -105,25 +112,30 @@
             </span>
           </div>
           <div id="productList" class="innerContent productList"></div>
-          <div class="flexEndWrapper">
-            <button type="button" onclick="onAddToCart()">
-              Add selected items to cart
-            </button>
-          </div>
+          <button
+            type="button"
+            onclick="onAddToCart()"
+            class="submitButton disabled"
+            id="addToCartButton"
+            disabled
+          >
+            Add selected items to cart
+          </button>
         </div>
-        <input type="radio" id="cart" name="tabs" />
-        <label for="cart">Cart</label>
-        <div class="tabContent">
+
+        <button class="accordion" id="cart" disabled>
+          <h2>3.) Review cart</h2>
+        </button>
+        <div class="panel hidden" id="cartPanel">
           <h1>Your Cart</h1>
           <hr />
-          <div id="shoppingCart" class="innerContent displayProduct">
-            <h3>
-              Cart is empty. Please go to the 'Products' page to add groceries.
-            </h3>
-          </div>
+          <div id="shoppingCart" class="innerContent displayProduct"></div>
+
+          <h3>Thank you for shopping with us! Please come again soon.</h3>
         </div>
       </div>
       <footer class="title">Website Designed by: Group 14</footer>
     </div>
-  </body>
+  <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d8636382b49f999',m:'t1YHR6xCKfEvBNBOmEnFrpsl3UUEql.NcPxoKGKPJ_4-1644001959-0-Aae0zyV7Pko97cnxjfGXOpayTkgJl9H0pDgpvKBFH5lagAkzA+IPcy/pJHJ9d+onD6UlnrMOH2qF2PkUS5c/VQFXYL+5/bOXy69YeT3wU0TYK1GWmaLb8PAYpU4G+amIVcyBTPY3rvYoMCyT6yQoqhTaMsANWPOtynlfe+UdMI35L6uZxP3OqHCU0km2I54zpg==',s:[0x8277e35e67,0x094bad4a13],}})();</script></body>
+  <script src="scripts/events.js"></script>
 </html>

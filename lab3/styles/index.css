@@ -1,3 +1,7 @@
+:root {
+  --primaryColor: #2c3e50;
+}
+
 body {
   background-color: #935d8c;
   font-family: "Poppins", sans-serif;
@@ -19,7 +23,7 @@ ul {
 }
 
 .formItem {
-  border-left: 1px solid gray;
+  border-left: 1px solid var(--primaryColor);
   padding: 10px;
 }
 
@@ -31,6 +35,9 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .dietSelect {
@@ -49,28 +56,26 @@ ul {
   border-top: 1px solid black;
 }
 
-.flexEndWrapper {
-  display: flex;
-  justify-content: flex-end;
+.submitButton {
+  display: block;
+  margin-left: auto;
+  background-color: var(--primaryColor);
+  color: white;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 8px;
+  min-width: 100px;
+  margin-bottom: 10px;
+}
+
+.submitButton:hover {
+  filter: brightness(85%);
 }
 
 figure {
   padding: 2px;
   margin: 0px;
   text-align: center;
-}
-
-button {
-  background-color: #be8cbe;
-  color: white;
-  height: 50px;
-  cursor: pointer;
-  border-radius: 8px;
-  min-width: 100px;
-}
-
-button:hover {
-  background-color: #c79cc8;
 }
 
 .title {
@@ -82,63 +87,6 @@ button:hover {
   width: 100%;
   border-bottom: 1px solid #000;
   padding-bottom: 3px;
-}
-
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  background-color: #efa8b0;
-  border: 2px solid black;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 1000px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.tabs > input[type="radio"] {
-  display: none;
-}
-
-.tabs > label {
-  background: #efa8b0;
-  font-weight: bold;
-  color: #000;
-  cursor: pointer;
-  padding: 1em 1.5em;
-  border-bottom: 0;
-}
-
-.tabs > label:hover {
-  background: #c79cc8;
-}
-
-.tabs .tabContent {
-  width: 100%;
-  padding: 2em;
-  background: #e5e5e5;
-  order: 1;
-  display: none;
-  border-top: 1px solid black;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
-.tabs > input[type="radio"]:checked + label {
-  background: #be8cbe;
-}
-
-.tabs > input[type="radio"]:checked + label + .tabContent {
-  display: block;
-}
-
-.tabs > input[type="radio"]:disabled + label {
-  cursor: not-allowed;
-  color: gray;
-}
-
-.tabs > input[type="radio"]:first-of-type + label {
-  border-top-left-radius: 12px;
 }
 
 .productList {
@@ -259,13 +207,91 @@ button:hover {
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--primaryColor);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px var(--primaryColor);
 }
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+.slider:hover {
+  filter: brightness(85%);
+}
+
+.wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 100%;
+}
+
+/*Used for creating slider: https://www.w3schools.com/howto/howto_js_accordion.asp*/
+
+.accordion {
+  width: 100%;
+  color: #444;
+  cursor: pointer;
+  padding: 30px;
+  border: none;
+  text-align: left;
+  outline: none;
+  background-color: var(--primaryColor);
+  color: white;
+}
+
+.accordion h2 {
+  color: white;
+  display: inline;
+}
+
+.accordion:not(:last-of-type) {
+  border-bottom: 1px solid gray;
+}
+
+.accordion[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.accordion:hover {
+  filter: brightness(85%);
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.accordion:after {
+  content: "\003E";
+  color: #777;
+  float: right;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.active:after {
+  content: "\2304";
+  font-size: 15px;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
 }

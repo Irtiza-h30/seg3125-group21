@@ -206,6 +206,26 @@ const products = {
   ],
 };
 
+const setAddToCartDisabled = (value) => {
+  const addToCartButton = document.getElementById("addToCartButton");
+  if (value) {
+    addToCartButton.disabled = true;
+    addToCartButton.classList.add("disabled");
+  } else {
+    addToCartButton.disabled = false;
+    addToCartButton.classList.remove("disabled");
+  }
+};
+
+const onCheckboxChange = () => {
+  const isDisabled =
+    [...document.querySelectorAll("input[name='products']:checked")].map(
+      (i) => i.value
+    ).length === 0;
+
+  setAddToCartDisabled(isDisabled);
+};
+
 const createCheckbox = (product) => {
   const list = document.getElementById("productList");
   const div = document.createElement("div");
@@ -214,6 +234,7 @@ const createCheckbox = (product) => {
   checkbox.name = "products";
   checkbox.value = product.name;
   checkbox.id = product.name;
+  checkbox.onchange = onCheckboxChange;
   const image = document.createElement("img");
   image.src = product.src;
   image.alt = product.name;
@@ -266,9 +287,12 @@ const groupBy = (xs) =>
     { Fruits: [], Vegetables: [], Grains: [], "Dairy & Eggs": [], Meats: [] }
   );
 
-const onChangeProfile = () => {
+const onSubmitProfile = () => {
   populateListProductChoices(getPersonalizedProducts(), "category");
   document.getElementById("sortBy").value = "category";
+  document.getElementById("profilePanel").classList.add("hidden");
+  document.getElementById("products").disabled = false;
+  document.getElementById("productsPanel").classList.remove("hidden");
 };
 
 const onSortByChange = (e) => {
@@ -347,6 +371,10 @@ const onAddToCart = () => {
     priceMsg.innerHTML = `<div class="product borderTop">
     <span>Total:</span><span>$${price}</span></div>`;
     list.appendChild(priceMsg);
+
+    document.getElementById("productsPanel").classList.add("hidden");
+    document.getElementById("cart").disabled = false;
+    document.getElementById("cartPanel").classList.remove("hidden");
   }
 };
 
@@ -354,11 +382,14 @@ const onChangeSlider = () => {
   const personalizedProducts = getPersonalizedProducts();
   const isChecked = document.getElementById("slider").checked;
 
+  setAddToCartDisabled(!isChecked);
+
   personalizedProducts.forEach((i) => {
     document.getElementById(i.name).checked = isChecked;
   });
 };
 
-window.onload = () => {
-  populateListProductChoices(getPersonalizedProducts(), "category");
+const toggleAccordion = (accordion) => {
+  accordion.classList.toggle("active");
+  accordion.nextElementSibling.classList.toggle("hidden");
 };

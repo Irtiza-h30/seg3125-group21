@@ -58,3 +58,10 @@ select {
 .hidden {
   display: none;
 }
+.email {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+.email:hover {
+  color: var(--bs-secondary);
+}

@@ -38,6 +38,11 @@
                 >
               </li>
               <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#staff"
+                  >Staff</a
+                >
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#book">Book</a>
               </li>
               <li class="nav-item">
@@ -71,29 +76,30 @@
         <div class="row align-items-start">
           <div class="col">
             <h5>Cutting + Style Services</h5>
+            <p>All haircut services include styling</p>
             <ul class="list-group">
               <li class="list-group-item">
-                Women’s Cut + Style – $57.00, $60.00, $68.00
+                Women’s Cut – $68.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
                   Terry)</span
                 >
               </li>
               <li class="list-group-item">
-                Women's Wash + Style – $45.00+
+                Women's Wash + Style – $45.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
                   Terry)</span
                 >
               </li>
               <li class="list-group-item">
-                Updo’s – $90.00+
+                Updo’s – $90.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Emma, Terry, Rose)</span
                 >
               </li>
               <li class="list-group-item">
-                Men’s Cut – $27.00, $30.00, $38.00
+                Men’s Cut – $38.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Jackie, Steven, Terry, Anthony)</span
                 >
@@ -109,7 +115,7 @@
                 >
               </li>
               <li class="list-group-item">
-                Keratin Smooth Treatment – $130.00+
+                Keratin Smooth Treatment – $130.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Emma, Jackie, Terry, Rose)</span
                 >
@@ -118,57 +124,30 @@
           </div>
           <div class="col">
             <h5>Coloring Services</h5>
+            <p>All coloring services include styling</p>
             <ul class="list-group">
               <li class="list-group-item">
-                Women’s Colour + Cut + Style – $117.00, $127.00, $135.00
+                Women’s Colour – $125.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
                   Terry)</span
                 >
               </li>
               <li class="list-group-item">
-                Women’s Colour + Style – $107.00, $117.00, $125.00
-                <br /><span class="helpText"
-                  >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
-                  Terry)</span
-                >
-              </li>
-              <li class="list-group-item">
-                Men’s Colour + Cut – $64.00, $69.00, $80.00
+                Men’s Colour - $80.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Jackie, Steven, Terry, Anthony)</span
                 >
               </li>
               <li class="list-group-item">
-                Men’s Colour + Style – $55.00+
+                Partial Highlights – $90.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
                   Terry)</span
                 >
               </li>
               <li class="list-group-item">
-                Mini Highlights + Cut – $110.00, $120.00, $125.00
-                <br /><span class="helpText"
-                  >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
-                  Terry)</span
-                >
-              </li>
-              <li class="list-group-item">
-                Partial Highlights + Cut + Style – $155.00, $167.00, $169.00
-                <br /><span class="helpText"
-                  >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
-                  Terry)</span
-                >
-              </li>
-              <li class="list-group-item">
-                Full Highlights + Cut + Style – $175.00, $185.00, $188.00
-                <br /><span class="helpText"
-                  >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
-                  Terry)</span
-                >
-              </li>
-              <li class="list-group-item">
-                Highlights + Colour – $145.00+
+                Full Highlights – $125.00
                 <br /><span class="helpText"
                   >(Offered by Cassandra, Trisha, Jackie, Steven, Emma,
                   Terry)</span
@@ -185,101 +164,242 @@
         </div>
       </div>
 
-      <div class="secondaryColor" id="book">
-        <h2>Book Now!</h2>
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              aria-describedby="name"
-              placeholder="Enter name"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
-            <div id="emailHelp" class="form-text">
-              We'll send you an apppointment confirmation via email.
+      <div id="staff" class="staffInformation">
+        <h2>The Team</h2>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18em;">
+              <div class="card-body">
+                <h5 class="card-title">Cassandra</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Founder / Stylist / Colorist</h6>
+                <p class="card-text">Cassandra founded Stylette in 2018. Cassandra's creative outlet is in hairdressing. 
+                  Cassandra enjoys working with clients to create customized looks based on their lifestyle and hair type.
+                </p>
+              </div>
             </div>
-            <div class="invalid-feedback">Please enter an email</div>
           </div>
-          <div class="mb-3">
-            <label for="typeOfService" class="form-label"
-              >Type of Service</label
-            >
-            <select
-              id="typeOfService"
-              class="form-select service"
-              aria-label="Default select example"
-              required
-            >
-              <option hidden>What type of service do you need?</option>
-              <option value="cuttingStyle">Cutting + Style</option>
-              <option value="coloring">Coloring</option>
-              <option value="treatment">Hair Treatment</option>
-            </select>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18em;">
+              <div class="card-body">
+                <h5 class="card-title">Trisha</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Stylist / Colorist</h6>
+                <p class="card-text">Trisha has been in the industry for 5 years. Her specialty is in specialty coloring technqiues
+                  such as baylage.
+                </p>
+              </div>
+            </div>
           </div>
-          <select
-            id="cuttingStyle"
-            class="form-select cuttingStyle option-target hidden"
-            aria-label="Default select example"
-          >
-            <option hidden>Select a Cutting + Style Service</option>
-            <option value="1">Women’s Cut + Style</option>
-            <option value="2">Women's Wash + Style</option>
-            <option value="3">Updo’s</option>
-            <option value="4">Men’s Cut</option>
-          </select>
-          <select
-            id="coloring"
-            class="form-select coloring option-target hidden"
-            aria-label="Default select example"
-          >
-            <option hidden>Select a Coloring Service</option>
-            <option value="1">Women’s Colour + Cut + Style</option>
-            <option value="2">Women’s Colour + Style</option>
-            <option value="3">Men’s Colour + Cut</option>
-            <option value="4">Men’s Colour + Style</option>
-            <option value="5">Mini Highlights + Cut</option>
-            <option value="6">Partial Highlights + Cut + Style</option>
-            <option value="7">Full Highlights + Cut + Style</option>
-            <option value="8">Highlights + Colour</option>
-            <option value="9">Toner + Blowdry</option>
-          </select>
-          <select
-            id="treatment"
-            class="form-select treatment option-target hidden"
-            aria-label="Default select example"
-          >
-            <option hidden>Select a Treatment Service</option>
-            <option value="1">FiberPlex Treatment</option>
-            <option value="2">Keratin Smooth Treatment</option>
-          </select>
-          <div class="mb-3 hidden" id="appointment">
-            <label for="appointmentTime">Appointment date and Time</label>
-            <input
-              class="form-control"
-              type="datetime-local"
-              id="appointmentTime"
-              name="appointmentTime"
-            />
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18em;">
+              <div class="card-body">
+                <h5 class="card-title">Jackie</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Stylist / Colorist</h6>
+                <p class="card-text">Jackie is a recent graduate and has a well-rounded set of skills related to styling and color.</p>
+              </div>
+            </div>
           </div>
-          <button id="submit" type="submit" class="btn btn-success hidden">
-            Submit
-          </button>
-        </form>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18em;">
+              <div class="card-body">
+                <h5 class="card-title">Steven</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Stylist / Colorist</h6>
+                <p class="card-text">Steven has been studying hair color for 9 years, and has worked in the industry under
+                  various mentors.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18em;">
+              <div class="card-body">
+                <h5 class="card-title">Emma</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Stylist / Colorist</h6>
+                <p class="card-text">Emma has 10+ years experience as a stylist and colorist, previously working in New York.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18em;">
+              <div class="card-body">
+                <h5 class="card-title">Terry</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Stylist / Colorist</h6>
+                <p class="card-text">Terry specializes in men's coloring and haircuts.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18em;">
+              <div class="card-body">
+                <h5 class="card-title">Rose</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Stylist</h6>
+                <p class="card-text">Rose specializes in special occassion styling and speciality hair treatments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>  
       </div>
 
-      <div id="gallery">
+      <div class="container">
+        <div class="secondaryColor" id="book">
+          <h2>Book Now!</h2>
+          <d>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                aria-describedby="name"
+                placeholder="Enter name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll send you an apppointment confirmation via email.
+              </div>
+              <div class="invalid-feedback">Please enter an email</div>
+            </div>
+            <h5>Select Services</h5>
+            <label for="cuttingStyle" class="form-label">Cutting + Style</label>
+            <select
+              id="cuttingStyle"
+              class="form-select cuttingStyle"
+              aria-label="Default select example"
+            >
+              <option hidden>Select a Cutting + Style Service</option>
+              <option value="0">N/A</option>
+              <option value="1">Women’s Cut</option>
+              <option value="2">Women's Wash + Style</option>
+              <option value="3">Updo’s</option>
+              <option value="4">Men’s Cut</option>
+            </select>
+            <label for="coloring" class="form-label">Coloring</label>
+            <select
+              id="coloring"
+              class="form-select coloring"
+              aria-label="Default select example"
+            >
+              <option hidden>Select a Coloring Service</option>
+              <option value="0">N/A</option>
+              <option value="1">Women’s Colour</option>
+              <option value="2">Men’s Colour</option>
+              <option value="3">Partial Highlights</option>
+              <option value="4">Full Highlights</option>
+              <option value="5">Toner + Blowdry</option>
+            </select>
+            <label for="treatment" class="form-label">Treatment</label>
+            <select
+              id="treatment"
+              class="form-select treatment"
+              aria-label="Default select example"
+            >
+              <option hidden>Select a Treatment Service</option>
+              <option value="0">N/A</option>
+              <option value="1">FiberPlex Treatment</option>
+              <option value="2">Keratin Smooth Treatment</option>
+            </select>
+            <div class="mb-3" id="appointment">
+              <label for="appointmentTime">Appointment date and Time</label>
+              <input
+                class="form-control"
+                type="datetime-local"
+                id="appointmentTime"
+                name="appointmentTime"
+              />
+            </div>
+            <h5>Payment Details</h5>
+            <div class="mb-3">
+              <label for="creditCardNumber" class="form-label">Credit Card Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="creditCardNumber"
+                aria-describedby="creditCardHelp"
+                placeholder="Enter credit card number"
+              />
+              <div id="creditCardHelp" class="form-text">
+                Credit card information is mandatory for booking.
+              </div>
+              <div class="invalid-feedback">Please enter a valid credit card number.</div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="creditCardExpiration" class="form-label">Expiration</label>
+                  <div class="row">
+                    <div class="col">
+                      <select
+                        id="month"
+                        class="form-select month"
+                        aria-label="Default select example"
+                        required
+                      >
+                        <option hidden>Month</option>
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">Jun</option>
+                        <option value="7">Jul</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <select
+                        id="year"
+                        class="form-select year"
+                        aria-label="Default select example"
+                        required
+                      >
+                        <option hidden>Year</option>
+                        <option value="2022">22</option>
+                        <option value="2023">23</option>
+                        <option value="2024">24</option>
+                        <option value="2025">25</option>
+                        <option value="2026">26</option>
+                        <option value="2027">27</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="creditCardCVV" class="form-label">CVV</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="creditCardCVV"
+                    aria-describedby="creditCardHelp"
+                    placeholder="Enter credit card CVV"
+                  />
+                  <div class="invalid-feedback">Please enter a valid CVV number.</div>
+                </div>
+              </div>
+            </div>
+            <button id="submit" type="submit" class="btn btn-success">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container" id="gallery">
         <h2>Gallery</h2>
         <div class="row">
           <div class="col-12 col-md-6 col-lg-4">
@@ -396,19 +516,21 @@
         </div>
       </div>
 
-      <div class="secondaryColor">
-        <div class="row">
-          <div class="col">
-            <h5>Hours</h5>
-            <p>Monday to Tuesday 10 AM – 5 PM</p>
-            <p>Wednesdays 10 AM – 6 PM</p>
-            <p>Thursday to Friday 10 AM – 8 PM</p>
-            <p>Saturdays 9 AM – 8 PM</p>
-            <p>Sundays 9 AM – 6 PM</p>
-          </div>
-          <div class="col">
-            <h5>Location</h5>
-            <p>11 Sussex Drive, Ottawa, Ontario</p>
+      <div class="container">
+        <div class="secondaryColor">
+          <div class="row">
+            <div class="col">
+              <h5>Hours</h5>
+              <p>Monday to Tuesday 10 AM – 5 PM</p>
+              <p>Wednesdays 10 AM – 6 PM</p>
+              <p>Thursday to Friday 10 AM – 8 PM</p>
+              <p>Saturdays 9 AM – 8 PM</p>
+              <p>Sundays 9 AM – 6 PM</p>
+            </div>
+            <div class="col">
+              <h5>Location</h5>
+              <p>11 Sussex Drive, Ottawa, Ontario</p>
+            </div>
           </div>
         </div>
       </div>

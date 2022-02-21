@@ -37,6 +37,10 @@ body {
   color: #6c757d;
 }
 
+.staffInformation .card {
+  height: 240px;
+}
+
 .mb-3,
 select {
   margin-bottom: 10px;

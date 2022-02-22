@@ -62,3 +62,7 @@ select {
 .hidden {
   display: none;
 }
+
+.error {
+  color: red;
+}

@@ -1,21 +1,47 @@
-window.onload = () => {
-  var optionsList = document.getElementById("typeOfService"),
-    allTargets = document.querySelectorAll(".option-target"),
-    currentOption,
-    currentTarget;
-
-  const hideShowTargets = () => {
-    allTargets.forEach((i) => {
-      i.classList.add("hidden");
-    });
-    currentOption = optionsList.value;
-    currentTarget = document.getElementById(currentOption);
-    console.log(currentTarget);
-    if (currentTarget) {
-      currentTarget.classList.remove("hidden");
-      document.getElementById("submit").classList.remove("hidden");
-      document.getElementById("appointment").classList.remove("hidden");
-    }
-  };
-  optionsList.addEventListener("change", hideShowTargets);
-};
+$(function () {
+  $("#bookingForm").validate({
+    rules: {
+      fullName: {
+        required: true,
+      },
+      email: {
+        required: true,
+        email: true,
+      },
+      creditCardNumber: {
+        required: true,
+        creditcard: true,
+      },
+      creditCardCVV: {
+        required: true,
+        minlength: 3,
+        maxlength: 3,
+      },
+    },
+    messages: {
+      fullName: "Please enter your full name",
+      email: {
+        required: "Please enter your email",
+        email: "Please enter a valid email",
+      },
+      creditCardNumber: {
+        required: "Please enter your credit card",
+        creditcard: "Please enter a valid credit card",
+      },
+      creditCardCVV: {
+        required: "Please enter your CVV",
+        minlength: "Please enter a valid CVV",
+      },
+    },
+    highlight: function (element) {
+      $(element)
+        .closest(".control-group")
+        .removeClass("success")
+        .addClass("error");
+    },
+    success: function (element) {
+      $(element).closest(".form-group").removeClass("has-error");
+      element.remove();
+    },
+  });
+});

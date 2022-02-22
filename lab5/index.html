@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="index.css" />
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="index.js"></script>
   </head>
   <body>
@@ -256,164 +257,173 @@
 
       <div class="secondaryColor" id="book">
         <h2>Book Now!</h2>
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            aria-describedby="name"
-            placeholder="Enter name"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-          <div id="emailHelp" class="form-text">
-            We'll send you an apppointment confirmation via email.
+        <form id="bookingForm" action="#" onchange="">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fullName"
+              name="fullName"
+              aria-describedby="name"
+              placeholder="Enter full name"
+            />
           </div>
-          <div class="invalid-feedback">Please enter an email</div>
-        </div>
-        <h5>Select Services</h5>
-        <label for="cuttingStyle" class="form-label">Cutting + Style</label>
-        <select
-          id="cuttingStyle"
-          class="form-select cuttingStyle"
-          aria-label="Default select example"
-        >
-          <option hidden>Select a Cutting + Style Service</option>
-          <option value="0">N/A</option>
-          <option value="1">Women’s Cut</option>
-          <option value="2">Women's Wash + Style</option>
-          <option value="3">Updo’s</option>
-          <option value="4">Men’s Cut</option>
-        </select>
-        <label for="coloring" class="form-label">Coloring</label>
-        <select
-          id="coloring"
-          class="form-select coloring"
-          aria-label="Default select example"
-        >
-          <option hidden>Select a Coloring Service</option>
-          <option value="0">N/A</option>
-          <option value="1">Women’s Colour</option>
-          <option value="2">Men’s Colour</option>
-          <option value="3">Partial Highlights</option>
-          <option value="4">Full Highlights</option>
-          <option value="5">Toner + Blowdry</option>
-        </select>
-        <label for="treatment" class="form-label">Treatment</label>
-        <select
-          id="treatment"
-          class="form-select treatment"
-          aria-label="Default select example"
-        >
-          <option hidden>Select a Treatment Service</option>
-          <option value="0">N/A</option>
-          <option value="1">FiberPlex Treatment</option>
-          <option value="2">Keratin Smooth Treatment</option>
-        </select>
-        <div class="mb-3" id="appointment">
-          <label for="appointmentTime">Appointment date and Time</label>
-          <input
-            class="form-control"
-            type="datetime-local"
-            id="appointmentTime"
-            name="appointmentTime"
-          />
-        </div>
-        <h5>Payment Details</h5>
-        <div class="mb-3">
-          <label for="creditCardNumber" class="form-label"
-            >Credit Card Number</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="creditCardNumber"
-            aria-describedby="creditCardHelp"
-            placeholder="Enter credit card number"
-          />
-          <div id="creditCardHelp" class="form-text">
-            Credit card information is mandatory for booking.
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll send you an apppointment confirmation via email.
+            </div>
           </div>
-          <div class="invalid-feedback">
-            Please enter a valid credit card number.
+          <hr class="mt-2 mb-3" />
+          <h5>Select Services</h5>
+          <div class="control-group">
+            <label for="cuttingStyle" class="form-label">Cutting + Style</label>
+            <select
+              id="cuttingStyle"
+              class="form-select cuttingStyle"
+              name="cuttingStyle"
+            >
+              <option hidden>Select a Cutting + Style Service</option>
+              <option value="0">N/A</option>
+              <option value="1">Women’s Cut</option>
+              <option value="2">Women's Wash + Style</option>
+              <option value="3">Updo’s</option>
+              <option value="4">Men’s Cut</option>
+            </select>
           </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="mb-3">
-              <label for="creditCardExpiration" class="form-label"
-                >Expiration</label
-              >
-              <div class="row">
-                <div class="col">
-                  <select
-                    id="month"
-                    class="form-select month"
-                    aria-label="Default select example"
-                    required
-                  >
-                    <option hidden>Month</option>
-                    <option value="1">Jan</option>
-                    <option value="2">Feb</option>
-                    <option value="3">Mar</option>
-                    <option value="4">Apr</option>
-                    <option value="5">May</option>
-                    <option value="6">Jun</option>
-                    <option value="7">Jul</option>
-                    <option value="8">Aug</option>
-                    <option value="9">Sep</option>
-                    <option value="10">Oct</option>
-                    <option value="11">Nov</option>
-                    <option value="12">Dec</option>
-                  </select>
-                </div>
-                <div class="col">
-                  <select
-                    id="year"
-                    class="form-select year"
-                    aria-label="Default select example"
-                    required
-                  >
-                    <option hidden>Year</option>
-                    <option value="2022">22</option>
-                    <option value="2023">23</option>
-                    <option value="2024">24</option>
-                    <option value="2025">25</option>
-                    <option value="2026">26</option>
-                    <option value="2027">27</option>
-                  </select>
+          <div class="control-group">
+            <label for="coloring" class="form-label">Coloring</label>
+            <select id="coloring" class="form-select coloring" name="coloring">
+              <option hidden>Select a Coloring Service</option>
+              <option value="0">N/A</option>
+              <option value="1">Women’s Colour</option>
+              <option value="2">Men’s Colour</option>
+              <option value="3">Partial Highlights</option>
+              <option value="4">Full Highlights</option>
+              <option value="5">Toner + Blowdry</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="treatment" class="form-label">Treatment</label>
+            <select
+              id="treatment"
+              class="form-select treatment"
+              name="treatment"
+            >
+              <option hidden>Select a Treatment Service</option>
+              <option value="0">N/A</option>
+              <option value="1">FiberPlex Treatment</option>
+              <option value="2">Keratin Smooth Treatment</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="appointmentTime">Appointment date and Time</label>
+            <input
+              class="form-control"
+              type="datetime-local"
+              id="appointmentTime"
+              name="appointmentTime"
+            />
+          </div>
+          <hr class="mt-2 mb-3" />
+          <h5>Payment Details</h5>
+          <div class="row">
+            <div id="creditCardHelp" class="form-text">
+              Credit card information is mandatory for booking.
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="creditCardNumber" class="form-label"
+                  >Credit Card Number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="creditCardNumber"
+                  aria-describedby="creditCardHelp"
+                  placeholder="Enter credit card number"
+                  name="creditCardNumber"
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="creditCardCVV" class="form-label">CVV</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="creditCardCVV"
+                  name="creditCardCVV"
+                  aria-describedby="creditCardHelp"
+                  placeholder="Enter credit card CVV"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="creditCardExpiration" class="form-label"
+                  >Expiration</label
+                >
+                <div class="row">
+                  <div class="col">
+                    <select
+                      id="month"
+                      class="form-control"
+                      name="creditCardExpirationMonth"
+                      name="month"
+                      required
+                    >
+                      <option value="" hidden>Select month...</option>
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <select
+                      id="year"
+                      class="form-select"
+                      name="creditCardExpirationYear"
+                      required
+                    >
+                      <option value="" hidden>Select year...</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="mb-3">
-              <label for="creditCardCVV" class="form-label">CVV</label>
-              <input
-                type="number"
-                class="form-control"
-                id="creditCardCVV"
-                aria-describedby="creditCardHelp"
-                placeholder="Enter credit card CVV"
-              />
-              <div class="invalid-feedback">
-                Please enter a valid CVV number.
-              </div>
-            </div>
-          </div>
-        </div>
-        <button id="submit" type="submit" class="btn btn-success">
-          Submit
-        </button>
+          <button class="btn btn-primary" type="submit" id="submitButton">
+            Book
+          </button>
+        </form>
       </div>
 
       <div id="gallery">

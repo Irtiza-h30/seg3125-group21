@@ -41,7 +41,10 @@ $(document).ready(() => {
   });
 
   updateTimePicker(time);
-  updateDatePicker(date);
+
+  hairdresser.on("change", () => {
+    updateDatePicker(date, hairdresser);
+  });
 
   submit.click(() => {
     const fieldNames = {

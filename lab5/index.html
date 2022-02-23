@@ -376,6 +376,10 @@
           </div>
           <hr class="mt-2 mb-3" />
           <h4 class="mt-4">Appointment</h4>
+          <small id="disclaimer" class="text-muted"
+            >Please select a hairdresser to view their available
+            schedules</small
+          >
           <div class="p-1 row">
             <div class="col">
               <label for="inputDate" class="form-label">Date</label>
@@ -386,6 +390,7 @@
                 required
                 autocomplete="false"
                 placeholder="Select an appointment date"
+                readonly
               />
               <small class="invalid-feedback" id="inputDate-invalidfeedback">
                 Please select an appointment date
@@ -403,6 +408,7 @@
                 required
                 autocomplete="false"
                 placeholder="Select an appointment time"
+                readonly
               />
               <small class="invalid-feedback" id="inputTime-invalidfeedback">
                 Please select an appointment time

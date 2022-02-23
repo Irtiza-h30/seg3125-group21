@@ -55,10 +55,7 @@ select {
   row-gap: 1em;
 }
 
-.hidden {
-  display: none;
-}
-
-.error {
-  color: red;
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
 }

@@ -15,11 +15,38 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    />
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css"
+    />
+
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js"></script>
+    <script src="form.js"></script>
   </head>
   <body>
     <div class="container">
@@ -60,7 +87,7 @@
             <img src="images/salon.jpg" class="img-fluid" alt="salon" />
           </div>
           <div class="col">
-            <h1>Your one stop hair salon.</h1>
+            <h1>Your one stop hair salon</h1>
             <h5>
               Offering a wide variety of services, including colour, cuts,
               styling, and treatments!
@@ -72,38 +99,74 @@
 
       <div id="services">
         <h2>Services</h2>
-        <span class="helpText">All services are offered by Cassandra, Trisha, and Steven</span>
+        <span class="helpText"
+          >All services are offered by Cassandra, Trisha, and Steven</span
+        >
         <div class="row align-items-start">
           <div class="col">
             <h5>Cutting + Style Services</h5>
             <p>All haircut services include styling</p>
             <ul class="list-group">
-              <li class="list-group-item">Women’s Cut – $68.00</li>
-              <li class="list-group-item">Women's Wash + Style – $45.00</li>
-              <li class="list-group-item">Updo’s – $90.00</li>
-              <li class="list-group-item">Men’s Cut – $38.00</li>
+              <li class="list-group-item">
+                <span>Women’s Cut</span>
+                <span class="badge bg-success">$68.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Women's Wash + Style</span>
+                <span class="badge bg-success">$45.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Updo’s</span>
+                <span class="badge bg-success">$90.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Men’s Cut</span>
+                <span class="badge bg-success">$25.00</span>
+              </li>
             </ul>
             <br /><br />
             <h5>Hair Treatments</h5>
             <ul class="list-group">
-              <li class="list-group-item">FiberPlex Treatment – $30.00</li>
-              <li class="list-group-item">Keratin Smooth Treatment – $130.00</li>
+              <li class="list-group-item">
+                <span>FiberPlex Treatment</span>
+                <span class="badge bg-success">$30.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Keratin Smooth Treatment</span>
+                <span class="badge bg-success">$130.00</span>
+              </li>
             </ul>
           </div>
+
           <div class="col">
             <h5>Coloring Services</h5>
+
             <p>All coloring services include styling</p>
             <ul class="list-group">
-              <li class="list-group-item">Women’s Colour – $125.00</li>
-              <li class="list-group-item">Men’s Colour - $80.00</li>
-              <li class="list-group-item">Partial Highlights – $90.00</li>
-              <li class="list-group-item">Full Highlights – $125.00</li>
-              <li class="list-group-item">Toner + Blowdry – $65.00</li>
+              <li class="list-group-item">
+                <span>Women’s Colour</span>
+                <span class="badge bg-success">$125.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Men’s Colour</span>
+                <span class="badge bg-success">$80.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Partial Highlights</span>
+                <span class="badge bg-success">$90.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Full Highlights</span>
+                <span class="badge bg-success">$125.00</span>
+              </li>
+              <li class="list-group-item">
+                <span>Toner + Blowdry</span>
+                <span class="badge bg-success">$65.00</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-
       <div id="staff" class="staffInformation">
         <h2>The Team</h2>
         <div class="row">
@@ -120,19 +183,15 @@
                   Founder / Stylist / Colorist
                 </h6>
                 <p class="card-text">
-                  Cassandra founded Stylette in 2018. Cassandra has been in the industry for 8 years, 
-                  and has won multiple awards. 
+                  Cassandra founded Stylette in 2018. Cassandra has been in the
+                  industry for 8 years, and has won multiple awards.
                 </p>
               </div>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card" style="width: 18em">
-              <img
-                src="images/staff2.png"
-                class="card-img-top"
-                alt="Trisha"
-              />
+              <img src="images/staff2.png" class="card-img-top" alt="Trisha" />
               <div class="card-body">
                 <h5 class="card-title">Trisha</h5>
                 <h6 class="card-subtitle mb-2 text-muted">
@@ -147,11 +206,7 @@
           </div>
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card" style="width: 18em">
-              <img
-                src="images/staff3.png"
-                class="card-img-top"
-                alt="Steven"
-              />
+              <img src="images/staff3.png" class="card-img-top" alt="Steven" />
               <div class="card-body">
                 <h5 class="card-title">Steven</h5>
                 <h6 class="card-subtitle mb-2 text-muted">
@@ -169,189 +224,320 @@
 
       <div class="secondaryColor" id="book">
         <h2>Book Now!</h2>
-        <form id="bookingForm" action="#" onchange="">
-          <div class="mb-3">
-            <label for="fullName" class="form-label">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="fullName"
-              name="fullName"
-              aria-describedby="name"
-              placeholder="Enter full name"
-            />
+        <hr class="mt-2 mb-3" />
+        <form
+          id="book-appointment"
+          class="p-2"
+          novalidate
+          action=""
+          method="get"
+        >
+          <div class="p-1 row">
+            <div class="col">
+              <label for="inputFirst" class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputFirst"
+                placeholder="Enter first name"
+                required
+              />
+              <small class="invalid-feedback" id="inputFirst-invalidfeedback">
+                Please enter a valid first name
+              </small>
+              <small class="valid-feedback" id="inputFirst-validfeedback">
+                ✓
+              </small>
+            </div>
+            <div class="col">
+              <label for="inputLast" class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputLast"
+                placeholder="Enter last name"
+                required
+              />
+              <small class="invalid-feedback" id="inputLast-invalidfeedback">
+                Please enter a valid last name
+              </small>
+              <small class="valid-feedback" id="inputLast-validfeedback">
+                ✓
+              </small>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
+          <div class="p-1">
+            <label for="inputEmail" class="form-label">Email address</label>
             <input
               type="email"
               class="form-control"
-              id="email"
-              name="email"
+              id="inputEmail"
               aria-describedby="emailHelp"
               placeholder="Enter email"
+              required
             />
             <div id="emailHelp" class="form-text">
               We'll send you an apppointment confirmation via email.
             </div>
+            <small class="invalid-feedback" id="inputEmail-invalidfeedback">
+              Please enter a valid email address
+            </small>
+            <small class="valid-feedback" id="inputEmail-validfeedback">
+              ✓
+            </small>
+          </div>
+          <div class="p-1">
+            <label for="inputPhone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="inputPhone"
+              placeholder="(XXX)-XXX-XXXX"
+              required
+            />
+            <small class="invalid-feedback" id="inputPhone-invalidfeedback">
+              Please enter a valid phone number
+            </small>
+            <small class="valid-feedback" id="inputPhone-validfeedback">
+              ✓
+            </small>
           </div>
           <hr class="mt-2 mb-3" />
-          <h5>Select Services</h5>
-          <div class="control-group">
-            <label for="cuttingStyle" class="form-label">Cutting + Style</label>
-            <select
-              id="cuttingStyle"
-              class="form-select cuttingStyle"
-              name="cuttingStyle"
-            >
-              <option hidden>Select a Cutting + Style Service</option>
-              <option value="0">N/A</option>
+          <h4 class="mt-4">Choose a service</h4>
+          <div class="p-1">
+            <label for="cuttingStyle" class="form-label">Service</label>
+            <select id="cuttingStyle" class="form-select" required>
+              <option hidden value="">
+                Select a cutting and styling service
+              </option>
+              <option value="0">None</option>
               <option value="1">Women’s Cut</option>
               <option value="2">Women's Wash + Style</option>
               <option value="3">Updo’s</option>
               <option value="4">Men’s Cut</option>
             </select>
+            <small class="invalid-feedback" id="cuttingStyle-invalidfeedback">
+              Please select a cutting and styling service
+            </small>
+            <small class="valid-feedback" id="cuttingStyle-validfeedback">
+              ✓
+            </small>
           </div>
-          <div class="control-group">
-            <label for="coloring" class="form-label">Coloring</label>
-            <select id="coloring" class="form-select coloring" name="coloring">
-              <option hidden>Select a Coloring Service</option>
-              <option value="0">N/A</option>
+          <div class="p-1">
+            <label for="inputColoring" class="form-label">Coloring</label>
+            <select id="inputColoring" class="form-select">
+              <option hidden value="">Select a coloring service</option>
+              <option value="0">None</option>
               <option value="1">Women’s Colour</option>
               <option value="2">Men’s Colour</option>
               <option value="3">Partial Highlights</option>
               <option value="4">Full Highlights</option>
               <option value="5">Toner + Blowdry</option>
             </select>
+            <small class="invalid-feedback" id="inputColoring-invalidfeedback">
+              Please select a coloring service
+            </small>
+            <small class="valid-feedback" id="inputColoring-validfeedback">
+              ✓
+            </small>
           </div>
-          <div class="control-group">
-            <label for="treatment" class="form-label">Treatment</label>
-            <select
-              id="treatment"
-              class="form-select treatment"
-              name="treatment"
-            >
-              <option hidden>Select a Treatment Service</option>
-              <option value="0">N/A</option>
+          <div class="p-1">
+            <label for="inputTreatment" class="form-label">Treatment</label>
+            <select id="inputTreatment" class="form-select">
+              <option hidden value="">Select a treatment service</option>
+              <option value="0">None</option>
               <option value="1">FiberPlex Treatment</option>
               <option value="2">Keratin Smooth Treatment</option>
             </select>
+            <small class="invalid-feedback" id="inputTreatment-invalidfeedback">
+              Please select a treatment
+            </small>
+            <small class="valid-feedback" id="inputTreatment-validfeedback">
+              ✓
+            </small>
           </div>
-          <div class="control-group">
-            <label for="professional" class="form-label">Hairdresser</label>
-            <select
-              id="professional"
-              class="form-select professional"
-              name="professional"
-            >
-              <option hidden>Select a Professional</option>
-              <option value="0">N/A</option>
+          <div class="p-1">
+            <label for="inputHairdresser" class="form-label">Hairdresser</label>
+            <select id="inputHairdresser" class="form-select" required>
+              <option hidden value="">Select a hairdresser</option>
               <option value="1">Cassandra</option>
               <option value="2">Trisha</option>
               <option value="3">Steven</option>
             </select>
-          </div>
-          <div class="mb-3">
-            <label for="appointmentTime">Appointment date and Time</label>
-            <input
-              class="form-control"
-              type="datetime-local"
-              id="appointmentTime"
-              name="appointmentTime"
-            />
+            <small
+              class="invalid-feedback"
+              id="inputHairdresser-invalidfeedback"
+            >
+              Please select a hairdresser
+            </small>
+            <small class="valid-feedback" id="inputHairdresser-validfeedback">
+              ✓
+            </small>
           </div>
           <hr class="mt-2 mb-3" />
-          <h5>Payment Details</h5>
-          <div class="row">
-            <div id="creditCardHelp" class="form-text">
-              Credit card information is mandatory for booking.
+          <h4 class="mt-4">Appointment</h4>
+          <div class="p-1 row">
+            <div class="col">
+              <label for="inputDate" class="form-label">Date</label>
+              <input
+                aria-label="Select a date"
+                class="form-control"
+                id="inputDate"
+                required
+                autocomplete="false"
+                placeholder="Select an appointment date"
+              />
+              <small class="invalid-feedback" id="inputDate-invalidfeedback">
+                Please select an appointment date
+              </small>
+              <small class="valid-feedback" id="inputDate-validfeedback">
+                ✓
+              </small>
             </div>
             <div class="col">
-              <div class="mb-3">
-                <label for="creditCardNumber" class="form-label"
-                  >Credit Card Number</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="creditCardNumber"
-                  aria-describedby="creditCardHelp"
-                  placeholder="Enter credit card number"
-                  name="creditCardNumber"
-                />
-              </div>
-            </div>
-            <div class="col">
-              <div class="mb-3">
-                <label for="creditCardCVV" class="form-label">CVV</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="creditCardCVV"
-                  name="creditCardCVV"
-                  aria-describedby="creditCardHelp"
-                  placeholder="Enter credit card CVV"
-                />
-              </div>
+              <label for="inputTime" class="form-label">Time</label>
+              <input
+                aria-label="Select a time"
+                class="form-control"
+                id="inputTime"
+                required
+                autocomplete="false"
+                placeholder="Select an appointment time"
+              />
+              <small class="invalid-feedback" id="inputTime-invalidfeedback">
+                Please select an appointment time
+              </small>
+              <small class="valid-feedback" id="inputTime-validfeedback">
+                ✓
+              </small>
             </div>
           </div>
-
-          <div class="row">
+          <hr class="mt-2 mb-3" />
+          <h4 class="mt-4">Payment</h4>
+          <div class="p-1 row">
             <div class="col">
-              <div class="mb-3">
-                <label for="creditCardExpiration" class="form-label"
-                  >Expiration</label
-                >
-                <div class="row">
-                  <div class="col">
-                    <select
-                      id="month"
-                      class="form-control"
-                      name="creditCardExpirationMonth"
-                      name="month"
-                      required
-                    >
-                      <option value="" hidden>Select month...</option>
-                      <option value="1">Jan</option>
-                      <option value="2">Feb</option>
-                      <option value="3">Mar</option>
-                      <option value="4">Apr</option>
-                      <option value="5">May</option>
-                      <option value="6">Jun</option>
-                      <option value="7">Jul</option>
-                      <option value="8">Aug</option>
-                      <option value="9">Sep</option>
-                      <option value="10">Oct</option>
-                      <option value="11">Nov</option>
-                      <option value="12">Dec</option>
-                    </select>
-                  </div>
-                  <div class="col">
-                    <select
-                      id="year"
-                      class="form-select"
-                      name="creditCardExpirationYear"
-                      required
-                    >
-                      <option value="" hidden>Select year...</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                      <option value="2024">2024</option>
-                      <option value="2025">2025</option>
-                      <option value="2026">2026</option>
-                      <option value="2027">2027</option>
-                    </select>
-                  </div>
-                </div>
+              <label for="inputCcNumber">Credit card number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCcNumber"
+                placeholder="XXXX-XXXX-XXXX-XXXX"
+                required
+              />
+              <div>
+                <small id="inputCcNumber-feedback" class="text-muted">
+                  Credit card information is mandatory for booking.
+                </small>
               </div>
+              <small id="inputCcNumber-validfeedback" class="valid-feedback">
+                ✓
+              </small>
+              <small
+                id="inputCcNumber-invalidfeedback"
+                class="invalid-feedback"
+              >
+                Must only contain numbers, in the form XXXX-XXXX-XXXX-XXXX.
+              </small>
+            </div>
+            <div class="col">
+              <label for="inputCcCvv">CVV</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCcCvv"
+                placeholder="XXX"
+                required
+              />
+              <small id="inputCcCvv-validfeedback" class="valid-feedback">
+                ✓
+              </small>
+              <small id="inputCcCvv-invalidfeedback" class="invalid-feedback">
+                Must only contain numbers, in the form XXX.
+              </small>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit" id="submitButton">
-            Book
-          </button>
+          <div class="p-1 row">
+            <div class="col-md-6 mb-3">
+              <label for="creditCardCVV" class="form-label"
+                >Expiration month</label
+              >
+              <select
+                class="form-control"
+                id="creditCardExpirationMonth"
+                required
+              >
+                <option value="" hidden>Select month...</option>
+                <option value="1">Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">Mar</option>
+                <option value="4">Apr</option>
+                <option value="5">May</option>
+                <option value="6">Jun</option>
+                <option value="7">Jul</option>
+                <option value="8">Aug</option>
+                <option value="9">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+              </select>
+              <small
+                id="creditCardExpirationMonth-validfeedback"
+                class="valid-feedback"
+              >
+                ✓
+              </small>
+              <small
+                id="creditCardExpirationMonth-invalidfeedback"
+                class="invalid-feedback"
+              >
+                Please select month of credit card expiration
+              </small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="creditCardCVV" class="form-label"
+                >Expiration year</label
+              >
+              <select
+                class="form-select"
+                id="creditCardExpirationYear"
+                required
+              >
+                <option value="" hidden>Select year...</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+              </select>
+              <small
+                id="creditCardExpirationYear-validfeedback"
+                class="valid-feedback"
+              >
+                ✓
+              </small>
+              <small
+                id="creditCardExpirationYear-invalidfeedback"
+                class="invalid-feedback"
+              >
+                Please select year of credit card expiration
+              </small>
+            </div>
+          </div>
+          <small class="invalid-feedback" id="form-invalidfeedback"> </small>
+          <div class="modal-footer">
+            <button type="button" id="submit" class="btn btn-success">
+              Book Appointment
+            </button>
+          </div>
         </form>
       </div>
-
+      <div
+        id="confirmation"
+        class="alert alert-success"
+        hidden
+        role="alert"
+      ></div>
       <div id="gallery">
         <h2>Gallery</h2>
         <div class="row">
@@ -472,19 +658,16 @@
       <div class="secondaryColor">
         <div class="row">
           <div class="col">
-            <h5><strong>Hours</strong></h5>
-            <p>Monday to Tuesday 10 AM – 5 PM</p>
-            <p>Wednesdays 10 AM – 6 PM</p>
-            <p>Thursday to Friday 10 AM – 8 PM</p>
-            <p>Saturdays 9 AM – 8 PM</p>
-            <p>Sundays 9 AM – 6 PM</p>
+            <h5>Hours</h5>
+            <p>Monday to Friday: 9 AM – 5 PM</p>
+            <p>Saturday: 9 AM – 8 PM</p>
           </div>
           <div class="col">
-            <h5><strong>Location</strong></h5>
+            <h5>Location</h5>
             <p>11 Sussex Drive, Ottawa, Ontario</p>
           </div>
           <div class="col">
-            <h5><strong>Contact Us</strong></h5>
+            <h5>Contact Us</h5>
             <p>Phone: (905)-679-1738</p>
             <p>
               Email:

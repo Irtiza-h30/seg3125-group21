@@ -4,6 +4,7 @@
 - [Lab2](https://irtiza-h30.github.io/seg3125-group14/lab2/)
 - [Lab3](https://irtiza-h30.github.io/seg3125-group14/lab3/)
 - [Lab4](https://irtiza-h30.github.io/seg3125-group14/lab4/)
+- [Lab5](https://irtiza-h30.github.io/seg3125-group14/lab5/)
 
 ## Authors
 

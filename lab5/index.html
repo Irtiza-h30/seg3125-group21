@@ -44,6 +44,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css"
     />
 
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip({
+              placement : 'top'
+          });
+      });
+      </script>
+
     <link rel="stylesheet" href="index.css" />
     <script src="index.js"></script>
     <script src="form.js"></script>
@@ -243,7 +254,7 @@
                 required
               />
               <small class="invalid-feedback" id="inputFirst-invalidfeedback">
-                Please enter a valid first name
+                Please enter a valid first name. Must not contain any numbers or special characters
               </small>
               <small class="valid-feedback" id="inputFirst-validfeedback">
                 ✓
@@ -259,7 +270,7 @@
                 required
               />
               <small class="invalid-feedback" id="inputLast-invalidfeedback">
-                Please enter a valid last name
+                Please enter a valid last name. Must not contain any numbers or special characters
               </small>
               <small class="valid-feedback" id="inputLast-validfeedback">
                 ✓
@@ -287,7 +298,9 @@
             </small>
           </div>
           <div class="p-1">
-            <label for="inputPhone" class="form-label">Phone Number</label>
+            <label for="inputPhone" class="form-label">Phone Number  <i class="fa fa-question-circle" 
+              data-toggle="tooltip" 
+              title="In case we need to contact you about your appointment"></i></label>  </label>
             <input
               type="tel"
               class="form-control"
@@ -382,7 +395,9 @@
           >
           <div class="p-1 row">
             <div class="col">
-              <label for="inputDate" class="form-label">Date</label>
+              <label for="inputDate" class="form-label" >Date  <i class="fa fa-question-circle" 
+              data-toggle="tooltip" 
+              title="Closed on statutory holidays"></i></label>  
               <input
                 aria-label="Select a date"
                 class="form-control"

@@ -30,11 +30,21 @@ module.exports = (app) => {
   // when a user goes to localhost:3000/analysis
   // serve a template (ejs file) which will include the data from the data files
   app.get("/analysis", function (_, res) {
-    const color = readData("color");
-    const fruit = readData("fruit");
-    const animal = readData("animal");
+    const description = readData("description");
+    const design = readData("design");
+    const favouriteAspects = readData("favouriteAspects");
+    const recommend = readData("recommend");
+    const usability = readData("usability");
+    const comment = readData("comment");
     res.render("showResults", {
-      results: { Color: color, Fruit: fruit, Animal: animal },
+      results: {
+        Description: description,
+        Design: design,
+        "Favourite Aspects": favouriteAspects,
+        Recommend: recommend,
+        Usability: usability,
+        Comment: comment,
+      },
     });
   });
 
@@ -49,6 +59,7 @@ module.exports = (app) => {
   // will be recuperated here, parsed and used to update the data files
   app.post("/niceSurvey", urlencodedParser, function (req, res) {
     const data = req.body;
+    console.log(data);
     Object.keys(data).forEach((key) => {
       if (typeof data[key] !== "string") {
         data[key].forEach((i) => {

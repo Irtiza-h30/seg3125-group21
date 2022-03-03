@@ -1,48 +1,109 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Questionnaire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    <meta charset="utf-8" />
+    <meta
+      name="author"
+      content="co-authored by Irtiza Hasan, Kareem Dabbour, Andrea Herscovich, and Justin Lim"
     />
+    <meta name="description" content="Lab 6 - Introduction to Nodejs" />
+    <meta name="keywords" content="This lab is an introduction to Nodejs" />
+    <title>SEG3125 Lab 6</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   </head>
-
   <body>
-    <div class="container-md p-3 my-3 border bg-dark text-white" id="survey">
-      <h1>Survey</h1>
-      <form>
-        <h2>What fruits(s) do you like?</h2>
-        I like:<br />
-        <input type="text" name="fruit" placeholder="fruit name..." required />
-        <br />
-        <br />
-        <h2>What color(s) do you like?</h2>
-        I like:<br />
-        <input type="checkbox" name="color" value="Red" /> Red<br />
-        <input type="checkbox" name="color" value="Green" /> Green<br />
-        <input type="checkbox" name="color" value="Blue" /> Blue<br />
-        <br />
-        <h2>What is your favorite animal?</h2>
-        I like:<br />
-        <select name="animal">
-          <option value="Cat" selected="selected">Cat</option>
-          <option value="Dog">Dog</option>
-          <option value="Turtle">Turtle</option>
-        </select>
-        <br />
-        <br />
-        <button type="submit" class="btn btn-warning" id="bb">Submit</button>
-        <p id="thanks"></p>
-      </form>
-    </div>
+    <form name="form" action="#">
+      <div class="wrapper">
+        <h1>Shopify UI Analysis Survey</h1>
+        <h4>
+          What do you think of
+          <a href="https://www.shopify.ca/" rel="noopener noreferrer">
+            Shopify's
+          </a>
+          website?
+        </h4>
+        <a href="https://www.shopify.ca/" rel="noopener noreferrer"
+          ><img src="/images/shopify.png" alt="Shopify Homepage"
+        /></a>
+        <div class="card">
+          <label for="name"><b>Full Name:</b></label>
+          <input type="text" placeholder="Enter name..." />
+        </div>
+        <div class="card">
+          <label for="name">
+            <b>Describe the website in one word:</b>
+          </label>
+          <input type="text" placeholder="Enter word..." name="description" />
+        </div>
+        <div class="card">
+          <p><b>What are your favorite aspects about the website?</b></p>
+          <input type="checkbox" name="favouriteAspects" value="Ease of Use" />
+          <label for="easeOfUse">Ease of Use</label><br />
+          <input
+            type="checkbox"
+            name="favouriteAspects"
+            value="Interface Design"
+          />
+          <label for="interfaceDesign">Interface Design</label><br />
+          <input
+            type="checkbox"
+            name="favouriteAspects"
+            value="Features Provided"
+          />
+          <label for="featuresProvided ">Features Provided</label><br />
+          <input type="checkbox" name="favouriteAspects" value="Reliable" />
+          <label for="reliable ">Reliablity</label><br />
+        </div>
+        <div class="card">
+          <p><b>How would you rate the usability of the website?</b></p>
+          <input type="radio" name="usability" value="Poor" />
+          <label for="poor">Poor</label><br />
+          <input type="radio" name="usability" value="Satisfactory" />
+          <label for="satisfactory">Satisfactory</label><br />
+          <input type="radio" name="usability" value="Great" />
+          <label for="great">Great</label><br />
+          <input type="radio" name="usability" value="Excellent" />
+          <label for="excellent">Excellent</label><br />
+          <br />
+        </div>
+        <div class="card">
+          <label for="design">
+            <b>What do you like most about the website's design?</b>
+          </label>
+          <select name="design">
+            <option value="Colours">Colours</option>
+            <option value="Layout">Layout</option>
+            <option value="Animation">Animation</option>
+            <option value="Font">Font</option>
+            <option value="Icons">Icons</option>
+            <option value="Navigation">Navigation</option>
+          </select>
+        </div>
+        <div class="card">
+          <b>
+            How likely are you to recommend Shopify to your friends and family?
+          </b>
+          <p>
+            Not very likely
+            <input type="range" name="recommend" min="1" max="5" />
+            Very likely
+          </p>
+        </div>
+        <div class="card">
+          <b>Feedback and Comments:</b>
+          <br />
+          <textarea
+            rows="5"
+            placeholder="Enter comments..."
+            name="comment"
+          ></textarea>
+        </div>
+        <input type="submit" value="Submit" />
+        <footer>Website Designed by: Group 14</footer>
+      </div>
+    </form>
     <script src="/assets/action.js"></script>
   </body>
 </html>

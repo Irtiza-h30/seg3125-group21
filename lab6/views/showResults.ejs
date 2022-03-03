@@ -3,14 +3,13 @@
   <head>
     <title>Survey Analysis</title>
   </head>
-
   <body>
     <h1>Survey Analysis</h1>
     <% Object.keys(results).forEach(key => { %>
-    <h1><%= key %></h1>
+    <h2><%= key %>:</h2>
     <% Object.keys(results[key]).forEach(i => { %>
     <ul>
-      <li><%= i %> : <%= results[key][i] %></li>
+      <li><%= i %> :<code> <%= results[key][i] %></code></li>
     </ul>
     <% }) %> <% }) %>
   </body>

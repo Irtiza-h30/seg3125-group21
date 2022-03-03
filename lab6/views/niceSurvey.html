@@ -9,101 +9,103 @@
     <meta name="description" content="Lab 6 - Introduction to Nodejs" />
     <meta name="keywords" content="This lab is an introduction to Nodejs" />
     <title>SEG3125 Lab 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   </head>
   <body>
-    <form name="form" action="#">
-      <div class="wrapper">
+    <div class="container">
         <h1>Shopify UI Analysis Survey</h1>
-        <h4>
+        <p>
           What do you think of
           <a href="https://www.shopify.ca/" rel="noopener noreferrer">
             Shopify's
           </a>
           website?
-        </h4>
+        </p>
         <a href="https://www.shopify.ca/" rel="noopener noreferrer"
           ><img src="/images/shopify.png" alt="Shopify Homepage"
         /></a>
-        <div class="card">
-          <label for="name"><b>Full Name:</b></label>
-          <input type="text" placeholder="Enter name..." />
-        </div>
-        <div class="card">
-          <label for="name">
-            <b>Describe the website in one word:</b>
-          </label>
-          <input type="text" placeholder="Enter word..." name="description" />
-        </div>
-        <div class="card">
-          <p><b>What are your favorite aspects about the website?</b></p>
-          <input type="checkbox" name="favouriteAspects" value="Ease of Use" />
-          <label for="easeOfUse">Ease of Use</label><br />
-          <input
-            type="checkbox"
-            name="favouriteAspects"
-            value="Interface Design"
-          />
-          <label for="interfaceDesign">Interface Design</label><br />
-          <input
-            type="checkbox"
-            name="favouriteAspects"
-            value="Features Provided"
-          />
-          <label for="featuresProvided ">Features Provided</label><br />
-          <input type="checkbox" name="favouriteAspects" value="Reliable" />
-          <label for="reliable ">Reliablity</label><br />
-        </div>
-        <div class="card">
-          <p><b>How would you rate the usability of the website?</b></p>
-          <input type="radio" name="usability" value="Poor" />
-          <label for="poor">Poor</label><br />
-          <input type="radio" name="usability" value="Satisfactory" />
-          <label for="satisfactory">Satisfactory</label><br />
-          <input type="radio" name="usability" value="Great" />
-          <label for="great">Great</label><br />
-          <input type="radio" name="usability" value="Excellent" />
-          <label for="excellent">Excellent</label><br />
-          <br />
-        </div>
-        <div class="card">
-          <label for="design">
-            <b>What do you like most about the website's design?</b>
-          </label>
-          <select name="design">
-            <option value="Colours">Colours</option>
-            <option value="Layout">Layout</option>
-            <option value="Animation">Animation</option>
-            <option value="Font">Font</option>
-            <option value="Icons">Icons</option>
-            <option value="Navigation">Navigation</option>
-          </select>
-        </div>
-        <div class="card">
-          <b>
-            How likely are you to recommend Shopify to your friends and family?
-          </b>
-          <p>
-            Not very likely
-            <input type="range" name="recommend" min="1" max="5" />
-            Very likely
-          </p>
-        </div>
-        <div class="card">
-          <b>Feedback and Comments:</b>
-          <br />
-          <textarea
-            rows="5"
-            placeholder="Enter comments..."
-            name="comment"
-          ></textarea>
-        </div>
-        <input type="submit" value="Submit" />
+        <form>
+          <div class="mb-3 form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" placeholder="Enter name..." class="form-control">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="name" class="form-label">Describe the website in one word</label>
+            <input type="text" placeholder="Enter word..." name="description" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="favouriteAspects" class="form-label">What are your favorite aspects about the website?</label>
+            <div class="mb-3 form-check">
+              <input type="checkbox" name="favouriteAspects" value="Ease of Use" class="form-check-input">
+              <label class="form-check-label" for="easeOfUse">Ease of Use</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" name="favouriteAspects" value="Interface Design" class="form-check-input">
+              <label class="form-check-label" for="interfaceDesign">Interface Design</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" name="favouriteAspects" value="Features Provided" class="form-check-input">
+              <label class="form-check-label" for="featuresProvided">Features Provided</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" name="favouriteAspects" value="Reliable" class="form-check-input">
+              <label class="form-check-label" for="reliable">Reliability</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">How would you rate the usability of the website?</label>
+            <div class="form-check">
+              <input class="form-check-input" checked type="radio" name="usability" value="Poor">
+              <label class="form-check-label" for="poor">
+                Poor
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="usability" value="Satisfactory">
+              <label class="form-check-label" for="satisfactory">
+                Satisfactory
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="usability" value="Great">
+              <label class="form-check-label" for="great">
+                Great
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="usability" value="Excellent">
+              <label class="form-check-label" for="excellent">
+                Excellent
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="design" class="form-label">What do you like most about the website's design?</label>
+            <select class="form-select" name="design" aria-label="Select what you liked most">
+              <option value="Colours">Colours</option>
+              <option value="Layout">Layout</option>
+              <option value="Animation">Animation</option>
+              <option value="Font">Font</option>
+              <option value="Icons">Icons</option>
+              <option value="Navigation">Navigation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="recommend" class="form-label">How likely are you to recommend Shopify to your friends and family?</label>
+            <input type="range" name="recommend" class="form-range" min="1" max="5">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="feedback" class="form-label">Feedback and Comments</label>
+            <textarea class="form-control" rows="3" name="comment" placeholder="Enter comments..."></textarea>
+          </div>
+          <button type="submit" value="submit" class="btn btn-success">Submit</button>
+        </form>
         <footer>Website Designed by: Group 14</footer>
       </div>
-    </form>
+    </div>
     <script src="/assets/action.js"></script>
   </body>
 </html>

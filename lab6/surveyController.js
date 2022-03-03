@@ -59,7 +59,6 @@ module.exports = (app) => {
   // will be recuperated here, parsed and used to update the data files
   app.post("/niceSurvey", urlencodedParser, function (req, res) {
     const data = req.body;
-    console.log(data);
     Object.keys(data).forEach((key) => {
       if (typeof data[key] !== "string") {
         data[key].forEach((i) => {

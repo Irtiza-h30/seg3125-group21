@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Survey Analysis</title>
+  </head>
+
+  <body>
+    <h1>Survey Analysis</h1>
+    <% Object.keys(results).forEach(key => { %>
+    <h1><%= key %></h1>
+    <% Object.keys(results[key]).forEach(i => { %>
+    <ul>
+      <li><%= i %> : <%= results[key][i] %></li>
+    </ul>
+    <% }) %> <% }) %>
+  </body>
+</html>

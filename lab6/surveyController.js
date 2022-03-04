@@ -21,7 +21,9 @@ const preprocessString = (string) =>
 
 const combineCounts = (name, value) => {
   const data = readData(name);
-  data[preprocessString(value)] = (data[preprocessString(value)] || 0) + 1;
+  if (value) {
+    data[preprocessString(value)] = (data[preprocessString(value)] || 0) + 1;
+  }
   writeData(data, name);
 };
 
@@ -43,7 +45,7 @@ module.exports = (app) => {
         "Favourite Aspects": favouriteAspects,
         Recommend: recommend,
         Usability: usability,
-        Comment: comment,
+        Comments: comment,
       },
     });
   });

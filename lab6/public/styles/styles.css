@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #90be6d;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -9,8 +8,8 @@ body {
 form {
   padding: 15px;
   border: 1px solid black;
-  border-radius: 15px;
-  background-color: #c4dbb6;
+  border-radius: 8px;
+  width: 100%;
 }
 
 .container {
@@ -18,18 +17,21 @@ form {
   flex-flow: column nowrap;
   align-items: center;
   row-gap: 10px;
-}
-
-a {
-  color: rgb(15, 89, 63);
-}
-
-button {
-  align-self: center;
+  max-width: 1000px;
 }
 
 img {
-  width: 520px;
-  height: 500px;
+  width: 700px;
+  height: auto;
   border: 1px solid black;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
 }

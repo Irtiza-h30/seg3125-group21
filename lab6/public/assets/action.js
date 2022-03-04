@@ -5,6 +5,14 @@ $(document).ready(function () {
       type: "POST",
       url: "/niceSurvey",
       data: $(this).serializeArray(),
+      success: function () {
+        $("#submitBtn").prop("disabled", "true");
+
+        $("#confirmation").removeAttr("hidden");
+        $("#confirmation").text(
+          "Thank you for participating in this user interface suryey!"
+        );
+      },
     });
     return false;
   });

@@ -153,7 +153,10 @@
             class="form-select"
             name="design"
             aria-label="Select what you liked most"
+            required
           >
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
             <option value="Colours">Colours</option>
             <option value="Layout">Layout</option>
             <option value="Animation">Animation</option>
@@ -161,6 +164,9 @@
             <option value="Icons">Icons</option>
             <option value="Navigation">Navigation</option>
           </select>
+          <small class="invalid-feedback">
+            Please select an option.
+          </small>
         </div>
         <div class="form-group">
           <label for="recommend" class="form-label"

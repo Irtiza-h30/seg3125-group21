@@ -29,13 +29,16 @@
       <div class="caption center-block">
         Click the picture above to view Shopify's website
       </div>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" novalidate id="form">
         <div class="form-group">
           <label for="name" class="form-label">Full Name</label>
-          <input type="text" placeholder="Enter name..." class="form-control" required/>
-          <small class="invalid-feedback">
-            Please enter a Full name
-          </small>
+          <input
+            type="text"
+            placeholder="Enter name..."
+            class="form-control"
+            required
+          />
+          <small class="invalid-feedback"> Please enter a full name </small>
         </div>
         <div class="form-group">
           <label for="name" class="form-label"
@@ -51,13 +54,13 @@
           <small class="invalid-feedback">
             Please enter a word to describe the website
           </small>
-          
+
           <span class="form-text text-muted">
             Write the first word that comes to your head
           </span>
         </div>
         <div class="form-group">
-          <label for="favouriteAspects" class="form-label" 
+          <label for="favouriteAspects" class="form-label"
             >What are your favorite aspects about the website?</label
           >
           <div class="form-check">
@@ -156,7 +159,6 @@
             required
           >
             <option selected disabled value="">Choose...</option>
-            <option>...</option>
             <option value="Colours">Colours</option>
             <option value="Layout">Layout</option>
             <option value="Animation">Animation</option>
@@ -164,9 +166,7 @@
             <option value="Icons">Icons</option>
             <option value="Navigation">Navigation</option>
           </select>
-          <small class="invalid-feedback">
-            Please select an option.
-          </small>
+          <small class="invalid-feedback"> Please select an option. </small>
         </div>
         <div class="form-group">
           <label for="recommend" class="form-label"
@@ -212,24 +212,5 @@
       <footer>Website Designed by: Group 14</footer>
     </div>
     <script src="/assets/action.js"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      });
-    });
-    </script>
   </body>
 </html>

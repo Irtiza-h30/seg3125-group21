@@ -17,4 +17,4 @@ export const getItem = (key) => {
   return value;
 };
 
-export const generateId = (prefix) => Math.random().toString(16).slice(2);
+export const generateId = () => Math.random().toString(16).slice(2);

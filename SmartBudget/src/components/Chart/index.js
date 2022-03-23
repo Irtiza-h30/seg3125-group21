@@ -10,7 +10,6 @@ import {
 } from "recharts";
 
 import styles from "./index.module.scss";
-import { Alert } from "antd";
 
 const renderActiveShape = ({
   cx,

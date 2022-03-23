@@ -19,9 +19,7 @@ const { Item } = Menu;
 const AppLayout = ({ children }) => {
   const location = useLocation();
 
-  const getActiveKey = () => {
-    return [location.pathname.substring(1)];
-  };
+  const getActiveKey = () => [location.pathname.substring(1)];
 
   return (
     <Layout className={styles.Layout}>

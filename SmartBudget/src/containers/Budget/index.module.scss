@@ -1,0 +1,35 @@
+.Container {
+  padding: 2em;
+}
+
+.ExpensesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.Expenses {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.Chart {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.Message {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.Label {
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 850px) {
+  .Expenses {
+    flex-wrap: wrap;
+  }
+}

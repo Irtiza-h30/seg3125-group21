@@ -10,6 +10,7 @@ import {
 } from "antd";
 import { groupBy } from "lodash";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 import { CATEGORIES } from "constants/index";
 import { getItem } from "utils";
@@ -21,6 +22,7 @@ const { Title, Text } = Typography;
 
 const Budget = () => {
   const [month, setMonth] = useState(moment().endOf("month"));
+  const { t } = useTranslation();
 
   const groupedTransactions = useMemo(() => {
     const data = getItem("transactions") ?? [];
@@ -56,17 +58,17 @@ const Budget = () => {
 
     if (income < expenses) {
       return (
-        <Title level={3} type="danger">{`Over budget by $${(
+        <Title level={3} type="danger">{`${t("overBudget")} $${(
           expenses - income
-        ).toFixed(2)} in ${date}`}</Title>
+        ).toFixed(2)} ${t("in")} ${date}`}</Title>
       );
     }
     return (
-      <Title level={3} type="success">{`Saved $${(income - expenses).toFixed(
-        2
-      )} in ${date} `}</Title>
+      <Title level={3} type="success">{`${t("saved")} $${(
+        income - expenses
+      ).toFixed(2)} ${t("in")} ${date} `}</Title>
     );
-  }, [valuePerCategory, month]);
+  }, [valuePerCategory, month, t]);
 
   const graphData = useMemo(() => {
     const arr = [];
@@ -84,7 +86,7 @@ const Budget = () => {
       extra={
         <>
           <Text type="secondary" className={styles.Label}>
-            Select date:
+            {t("selectDate")}
           </Text>
           <DatePicker
             value={month}
@@ -97,12 +99,12 @@ const Budget = () => {
       }
     >
       <Title level={4} type="success">
-        Income
+        {t("income")}
       </Title>
       <Statistic value={valuePerCategory["Income"]} precision={2} prefix="$" />
       <Divider />
       <Title level={4} type="danger">
-        Expenses
+        {t("expenses")}
       </Title>
       {graphData.length ? (
         <>
@@ -113,7 +115,7 @@ const Budget = () => {
                   return (
                     <Statistic
                       key={i}
-                      title={<Tag color={CATEGORIES[i]}>{i}</Tag>}
+                      title={<Tag color={CATEGORIES[i]}>{t(`${i}`)}</Tag>}
                       value={valuePerCategory[i]}
                       precision={2}
                       prefix="$"
@@ -132,7 +134,7 @@ const Budget = () => {
       ) : (
         <Alert
           message="Info"
-          description="No expenses found."
+          description={t("noExpensesFound")}
           type="info"
           showIcon
         />

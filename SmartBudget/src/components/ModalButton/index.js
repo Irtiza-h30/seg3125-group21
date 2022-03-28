@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Modal } from "antd";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 import styles from "./index.module.scss";
 
@@ -18,6 +19,7 @@ const ModalButton = ({
   ...props
 }) => {
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
 
   const handleSuccess = () => {
     if (form) {
@@ -65,7 +67,7 @@ const ModalButton = ({
         footer={
           <div className={styles.Buttons}>
             <Button className={styles.Button} onClick={() => setVisible(false)}>
-              Cancel
+              {t("cancel")}
             </Button>
             <Button
               className={styles.Button}
@@ -73,7 +75,7 @@ const ModalButton = ({
               onClick={handleSuccess}
               {...successButtonProps}
             >
-              Save
+              {t("save")}
             </Button>
           </div>
         }

@@ -14,6 +14,7 @@ import {
 } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 import { MODAL_LAYOUT, GOALS } from "constants/index";
 import ModalButton from "components/ModalButton";
@@ -26,19 +27,20 @@ const { Option } = Select;
 const { TabPane } = Tabs;
 
 const Goals = () => {
+  const { t } = useTranslation();
   const [form] = Form.useForm();
   const [goals, setGoals] = useState(getItem("goals") ?? []);
   const completedGoals = getItem("completedGoals") ?? [
     {
       id: generateId(),
-      category: "Personal",
+      category: t("Personal"),
       description: "Buying a Ps5",
       amount: 500,
       dateCompleted: "February, 2022",
     },
     {
       id: generateId(),
-      category: "Education",
+      category: t("Education"),
       description: "Paying off student loans",
       amount: 44000,
       dateCompleted: "December, 2021",
@@ -70,47 +72,47 @@ const Goals = () => {
     <Form form={form} name="transactions" {...MODAL_LAYOUT}>
       <Item
         name="category"
-        label="Category"
+        label={t("category")}
         rules={[
           {
             required: true,
-            message: "Category is required",
+            message: t("categoryRequired"),
           },
         ]}
       >
-        <Select placeholder="Select category">
+        <Select placeholder={t("selectCategory")}>
           {Object.keys(GOALS).map((i) => (
             <Option value={i} key={i}>
-              {i}
+              {t(`${i}`)}
             </Option>
           ))}
         </Select>
       </Item>
       <Item
         name="description"
-        label="Description"
+        label={t("description")}
         rules={[
           {
             required: true,
-            message: "Description is required",
+            message: t("descriptionRequired"),
           },
         ]}
       >
-        <Input placeholder="Enter description" />
+        <Input placeholder={t("enterDescription")} />
       </Item>
       <Item
         name="amount"
-        label="Total Amount"
+        label={t("totalAmount")}
         rules={[
           {
             required: true,
-            message: "Total amount is required",
+            message: t("totalAmountRequired"),
           },
         ]}
       >
         <InputNumber
           addonBefore="$"
-          placeholder="Enter total amount"
+          placeholder={t("enterTotalAmount")}
           type="number"
           min={0}
           className={styles.Input}
@@ -118,17 +120,17 @@ const Goals = () => {
       </Item>
       <Item
         name="totalContribution"
-        label="Initial Contribution"
+        label={t("initialContribution")}
         rules={[
           {
             required: true,
-            message: "Initial contribution amount is required",
+            message: t("initialContributionRequired"),
           },
         ]}
       >
         <InputNumber
           addonBefore="$"
-          placeholder="Enter initial contribution amount"
+          placeholder={t("enterInitialContribution")}
           type="number"
           min={0}
           className={styles.Input}
@@ -136,17 +138,17 @@ const Goals = () => {
       </Item>
       <Item
         name="contribution"
-        label="Monthly Contribution"
+        label={t("monthlyContribution")}
         rules={[
           {
             required: true,
-            message: "Monthly contribution is required",
+            message: t("monthlyContributionRequired"),
           },
         ]}
       >
         <InputNumber
           addonBefore="$"
-          placeholder="Enter monthly contribution"
+          placeholder={t("enterMonthlyContribution")}
           type="number"
           min={0}
           className={styles.Input}
@@ -156,30 +158,29 @@ const Goals = () => {
   );
   return (
     <>
-      <h1>Goals</h1>
+      <h1>{t("goals")}</h1>
       <Tabs defaultActiveKey="active">
         <TabPane tab="Active" key="active">
           <Divider orientation="left">
-            <h2>Active Goals</h2>
+            <h2>{t("activeGoals")}</h2>
           </Divider>
           <div className={styles.Header}>
             <h5>
-              {`Saving $${goals
+              {`${t("saving")} $${goals
                 .reduce((prev, current) => prev + current.contribution, 0)
-                .toLocaleString()} per
-        month for
-        ${goals.length} ${goals.length > 1 ? "goals" : "goal"}`}
+                .toLocaleString()} ${t("perMonth")}
+        ${goals.length} ${t("goal")}${goals.length > 1 ? "s" : ""}`}
             </h5>
             <ModalButton
               icon={<PlusOutlined />}
               form={form}
               modalContent={formContent}
               modalProps={{
-                title: "Add Goal",
+                title: t("addGoal"),
               }}
               onSubmit={addGoal}
             >
-              Add Goal
+              {t("addGoal")}
             </ModalButton>
           </div>
           <List
@@ -194,12 +195,18 @@ const Goals = () => {
                   title={
                     <div>
                       <h4>{item.description}</h4>
-                      <Tag color={GOALS[item.category]}>{item.category}</Tag>
+                      <Tag color={GOALS[item.category]}>
+                        {t(`${item.category}`)}
+                      </Tag>
                     </div>
                   }
                   description={
                     <>
-                      <h4>{`$${item.monthlyContribution.toLocaleString()} of $${item.contribution.toLocaleString()} this month`}</h4>
+                      <h4>{`$${item.monthlyContribution.toLocaleString()} ${t(
+                        "of"
+                      )} $${item.contribution.toLocaleString()} ${t(
+                        "thisMonth"
+                      )}`}</h4>
                       <Slider
                         min={0}
                         max={item.contribution}
@@ -215,13 +222,13 @@ const Goals = () => {
                 />
                 <div className={styles.Statistics}>
                   <Statistic
-                    title="Projected"
+                    title={t("projected")}
                     value={moment()
                       .add(item.amount / item.contribution, "months")
                       .format("MMMM, YYYY")}
                   />
                   <Statistic
-                    title="Contribution to Date"
+                    title={t("contributionToDate")}
                     value={`$${(
                       item.totalContribution + item.monthlyContribution
                     ).toLocaleString()} of $${item.amount.toLocaleString()} `}
@@ -231,9 +238,9 @@ const Goals = () => {
             )}
           />
         </TabPane>
-        <TabPane tab="Completed" key="completed">
+        <TabPane tab={t("completedGoals")} key="completed">
           <Divider orientation="left">
-            <h2>Completed Goals</h2>
+            <h2>{t("completedGoals")}</h2>
           </Divider>
           <List
             itemLayout="vertical"
@@ -253,7 +260,10 @@ const Goals = () => {
                   description={<Progress percent={100} />}
                 />
                 <div className={styles.Statistics}>
-                  <Statistic title="Completed" value={item.dateCompleted} />
+                  <Statistic
+                    title={t("completed")}
+                    value={item.dateCompleted}
+                  />
                   <Statistic
                     title="Saved"
                     value={`$${item.amount.toLocaleString()}`}

@@ -13,6 +13,7 @@ import {
 } from "antd";
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 import ModalButton from "components/ModalButton";
 import { CATEGORIES, MODAL_LAYOUT } from "constants/index";
@@ -25,6 +26,7 @@ const { Option } = Select;
 
 const Transactions = () => {
   const [form] = Form.useForm();
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState(
     getItem("transactions") ?? []
   );
@@ -65,7 +67,7 @@ const Transactions = () => {
 
   const columns = [
     {
-      title: "Transaction Date",
+      title: t("transactionDate"),
       dataIndex: "date",
       key: "date",
       width: "22%",
@@ -73,20 +75,20 @@ const Transactions = () => {
       render: (item) => moment(item).format("MMMM DD"),
     },
     {
-      title: "Description",
+      title: t("description"),
       dataIndex: "description",
       key: "description",
       width: "22%",
     },
     {
-      title: "Category",
+      title: t("category"),
       dataIndex: "category",
       key: "category",
       width: "22%",
-      render: (item) => <Tag color={CATEGORIES[item]}>{item}</Tag>,
+      render: (item) => <Tag color={CATEGORIES[item]}>{t(`${item}`)}</Tag>,
     },
     {
-      title: "Amount",
+      title: t("amount"),
       dataIndex: "amount",
       key: "amount",
       width: "22%",
@@ -104,7 +106,7 @@ const Transactions = () => {
           form={form}
           modalContent={formContent}
           modalProps={{
-            title: "Edit Transaction",
+            title: t("editTransaction"),
           }}
           onSubmit={updateTransaction}
           extraOnClick={() => setActiveTransaction(record)}
@@ -118,10 +120,10 @@ const Transactions = () => {
       key: "delete",
       render: (_, record) => (
         <Popconfirm
-          title="Are you sure you want to delete this transaction?"
+          title={t("deleteTransaction")}
           onConfirm={deleteTransaction}
-          okText="Confirm"
-          cancelText="Cancel"
+          okText={t("confirm")}
+          cancelText={t("cancel")}
           okButtonProps={{ type: "danger" }}
         >
           <Button
@@ -137,16 +139,16 @@ const Transactions = () => {
     <Form form={form} name="transactions" {...MODAL_LAYOUT}>
       <Item
         name="date"
-        label="Date"
+        label={t("transactionDate")}
         rules={[
           {
             required: true,
-            message: "Date is required",
+            message: t("transactionRequired"),
           },
         ]}
       >
         <DatePicker
-          placeholder="Select date"
+          placeholder={t("selectTransaction")}
           className={styles.Input}
           format="YYYY/MM/DD"
           disabledDate={(current) => current && current > moment()}
@@ -154,30 +156,30 @@ const Transactions = () => {
       </Item>
       <Item
         name="description"
-        label="Description"
+        label={t("description")}
         rules={[
           {
             required: true,
-            message: "Description is required",
+            message: t("descriptionRequired"),
           },
         ]}
       >
-        <Input placeholder="Enter description" />
+        <Input placeholder={t("enterDescription")} />
       </Item>
       <Item
         name="category"
-        label="Category"
+        label={t("category")}
         rules={[
           {
             required: true,
-            message: "Category is required",
+            message: t("categoryRequired"),
           },
         ]}
       >
-        <Select placeholder="Select category">
+        <Select placeholder={t("selectCategory")}>
           {Object.keys(CATEGORIES).map((i) => (
             <Option value={i} key={i}>
-              {i}
+              {t(`${i}`)}
             </Option>
           ))}
         </Select>
@@ -185,17 +187,17 @@ const Transactions = () => {
 
       <Item
         name="amount"
-        label="Amount"
+        label={t("amount")}
         rules={[
           {
             required: true,
-            message: "Amount is required",
+            message: t("amountRequired"),
           },
         ]}
       >
         <InputNumber
           addonBefore="$"
-          placeholder="Enter amount"
+          placeholder={t("enterAmount")}
           type="number"
           min={0}
           className={styles.Input}
@@ -243,17 +245,17 @@ const Transactions = () => {
   return (
     <>
       <div className={styles.Header}>
-        <h1>Transactions</h1>
+        <h1>{t("transactions")}</h1>
         <ModalButton
           icon={<PlusOutlined />}
           form={form}
           modalContent={formContent}
           modalProps={{
-            title: "Add Transaction",
+            title: t("addTransaction"),
           }}
           onSubmit={addTransaction}
         >
-          Add Transaction
+          {t("addTransaction")}
         </ModalButton>
       </div>
 
@@ -263,10 +265,10 @@ const Transactions = () => {
           buttonStyle="solid"
           onChange={(e) => setDateRange(e.target.value)}
         >
-          <Radio.Button value="4 weeks">Last 4 weeks </Radio.Button>
-          <Radio.Button value="3 months">Last 3 months </Radio.Button>
-          <Radio.Button value="6 months">Last 6 months </Radio.Button>
-          <Radio.Button value="1 year">Last 12 months </Radio.Button>
+          <Radio.Button value="4 weeks">{t("last4Weeks")}</Radio.Button>
+          <Radio.Button value="3 months">{t("last3Months")} </Radio.Button>
+          <Radio.Button value="6 months">{t("last6Months")} </Radio.Button>
+          <Radio.Button value="1 year">{t("last12Months")} </Radio.Button>
         </Radio.Group>
       </div>
 
@@ -289,7 +291,7 @@ const Transactions = () => {
           return (
             <>
               <Table.Summary.Row>
-                <Table.Summary.Cell>Total</Table.Summary.Cell>
+                <Table.Summary.Cell>{t("total")}</Table.Summary.Cell>
                 <Table.Summary.Cell></Table.Summary.Cell>
                 <Table.Summary.Cell></Table.Summary.Cell>
                 <Table.Summary.Cell>

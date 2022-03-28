@@ -8,6 +8,7 @@ import {
   Tooltip,
   Cell,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 
 import styles from "./index.module.scss";
 
@@ -32,19 +33,6 @@ const renderActiveShape = ({
   />
 );
 
-const renderLabel = ({ name, x, y, cx }) => (
-  <text
-    x={x}
-    y={y}
-    fill={COLORS[name]}
-    dominantBaseline="central"
-    textAnchor={x > cx ? "start" : "end"}
-    style={{ fontSize: "14px" }}
-  >
-    {name}
-  </text>
-);
-
 const COLORS = {
   Housing: "#FA541C",
   Transportation: "#13C2C2",
@@ -64,10 +52,24 @@ const Chart = ({ data }) => {
   const onMouseLeave = useCallback((data, index) => {
     setActiveIndex(null);
   }, []);
+  const { t } = useTranslation();
 
   const total = useMemo(
     () => data.reduce((prev, curr) => prev + curr.value, 0),
     [data]
+  );
+
+  const renderLabel = ({ name, x, y, cx }) => (
+    <text
+      x={x}
+      y={y}
+      fill={COLORS[name]}
+      dominantBaseline="central"
+      textAnchor={x > cx ? "start" : "end"}
+      style={{ fontSize: "14px" }}
+    >
+      {t(`${name}`)}
+    </text>
   );
 
   return (

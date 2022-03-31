@@ -61,4 +61,13 @@ export const TRANSLATIONS_FR = {
   perMonth: "par mois pour",
   saving: "Économie",
   activeGoals: "Objectifs actifs",
+  Retirement: "Retraite",
+  House: "Loger",
+  Marriage: "Mariage",
+  Education: "Éducation",
+  Family: "Famille",
+  Career: "Carrière",
+  Travel: "Voyage",
+  Car: "Auto",
+  Personal: "Personnelle",
 };

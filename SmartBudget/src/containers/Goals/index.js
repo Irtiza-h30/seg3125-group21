@@ -231,7 +231,9 @@ const Goals = () => {
                     title={t("contributionToDate")}
                     value={`$${(
                       item.totalContribution + item.monthlyContribution
-                    ).toLocaleString()} of $${item.amount.toLocaleString()} `}
+                    ).toLocaleString()} ${t(
+                      "of"
+                    )} $${item.amount.toLocaleString()} `}
                   />
                 </div>
               </List.Item>
@@ -254,7 +256,9 @@ const Goals = () => {
                   title={
                     <div>
                       <h4>{item.description}</h4>
-                      <Tag color={GOALS[item.category]}>{item.category}</Tag>
+                      <Tag color={GOALS[item.category]}>
+                        {t(`${item.category}`)}
+                      </Tag>
                     </div>
                   }
                   description={<Progress percent={100} />}
@@ -265,7 +269,7 @@ const Goals = () => {
                     value={item.dateCompleted}
                   />
                   <Statistic
-                    title="Saved"
+                    title={t("saved")}
                     value={`$${item.amount.toLocaleString()}`}
                   />
                 </div>
